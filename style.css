@@ -1,0 +1,294 @@
+/* ==========================================================================
+   1. ESTILOS GENERALES Y RESETS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Aplicamos Outfit como tipografía principal */
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    /* Capa de color morado/azul semi-transparente (0.6) sobre la imagen de fondo */
+    background: linear-gradient(rgba(15, 5, 29, 0.6), rgba(15, 5, 29, 0.6)), 
+                url('img/fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Helper para ocultar vistas inactivas */
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN PRINCIPAL (HEADER PERMANENTE)
+   ========================================================================== */
+.main-header {
+    width: 100%;
+    background: rgba(15, 5, 29, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo-container h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* MENÚ DESPLEGABLE "ACTIVIDADES" */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    min-width: 180px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    border-radius: 12px;
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    color: #2b0854;
+    padding: 10px 18px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #1368ce;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ==========================================================================
+   3. CONTENEDOR DE CONTENIDO Y TARJETA HERO
+   ========================================================================== */
+.content-container {
+    width: 100%;
+    max-width: 1100px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-section {
+    width: 100%;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    padding: 35px;
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: center;
+    color: #2b0854;
+}
+
+.hero-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.hero-card p {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+.hero-img-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 15px auto;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* ==========================================================================
+   4. TARJETAS CUADRADAS INFERIORES (GRID DE INICIO)
+   ========================================================================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto 0 auto;
+}
+
+/* Tarjetas semi-transparentes de colores completos */
+.feature-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    aspect-ratio: 1 / 1; /* Mantiene la forma cuadrada */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ffffff; /* Texto blanco para resaltar sobre el fondo de color */
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+/* Colores de fondo semi-transparentes para cada tarjeta */
+.card-blue {
+    background: rgba(0, 180, 216, 0.45); /* Azul translúcido */
+}
+
+.card-red {
+    background: rgba(226, 27, 60, 0.45);  /* Rojo translúcido */
+}
+
+.card-green {
+    background: rgba(38, 137, 12, 0.45);  /* Verde translúcido */
+}
+
+/* ==========================================================================
+   5. PESTAÑAS Y CONTENEDOR DE ACTIVIDADES
+   ========================================================================== */
+.activity-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.tab-btn {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #46178f;
+    color: #46178f;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background-color: #46178f;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(70, 23, 143, 0.3);
+}
+
+.activity-content {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==========================================================================
+   6. MAPA INTERACTIVO Y HITBOXES
+   ========================================================================== */
+.interactive-map-container {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    margin-top: 15px;
+}
+
+.map-image {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.hitbox {
+    position: absolute;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.hitbox:hover {
+    background: rgba(0, 180, 216, 0.3);
+}

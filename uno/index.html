@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Partes de la Computadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="kahoot-card" id="quiz-card">
+        <!-- Barra superior: Pregunta actual, Temporizador y Puntos -->
+        <header>
+            <div class="progress" id="question-number">Pregunta 1</div>
+            <div class="timer-badge" id="timer">15</div>
+            <div class="score-badge">Puntos: <span id="score">0</span></div>
+        </header>
+
+        <!-- Contenido principal -->
+        <main>
+            <h2 id="question-text">¿Cargando pregunta?</h2>
+            
+            <!-- Imagen del componente informático -->
+            <div class="image-container">
+                <img id="question-image" src="img/computadora.png" alt="Componente">
+            </div>
+
+            <!-- 4 Opciones de respuesta tipo Kahoot -->
+            <div class="options-grid">
+                <button class="opt-btn red" onclick="checkAnswer(0)"><span id="opt0">Opción 1</span></button>
+                <button class="opt-btn blue" onclick="checkAnswer(1)"><span id="opt1">Opción 2</span></button>
+                <button class="opt-btn yellow" onclick="checkAnswer(2)"><span id="opt2">Opción 3</span></button>
+                <button class="opt-btn green" onclick="checkAnswer(3)"><span id="opt3">Opción 4</span></button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Pantalla de Resultados Finales -->
+    <div class="kahoot-card hidden" id="result-card">
+        <h1>🎉 ¡Actividad Completada!</h1>
+        <p class="final-score">Puntuación Total: <strong id="final-score">0</strong> pts</p>
+        <button class="restart-btn" onclick="restartGame()">Volver a Jugar</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

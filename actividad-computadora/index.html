@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partes de la Computadora - 4º Grado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-card">
+        <header>
+            <h1>💻 Conoce las Partes de la Computadora</h1>
+            <div id="target-prompt">¡Cargando juego!</div>
+            <div class="score-board">
+                <span>Puntos: <strong id="score">0</strong></span>
+            </div>
+        </header>
+
+        <div class="map-container" id="map">
+            <img src="img/computadora.png" alt="Computadora y sus partes" id="main-img">
+
+            <button class="hitbox" data-part="monitor" style="top: 23%; left: 35%; width: 29%; height: 35%;"></button>
+            <button class="hitbox" data-part="teclado" style="top: 75%; left: 34%; width: 30%; height: 15%;"></button>
+            <button class="hitbox" data-part="mouse" style="top: 75%; left: 66%; width: 6%; height: 15%;"></button>
+            <button class="hitbox" data-part="cpu" style="top: 22%; left: 13%; width: 18%; height: 60%;"></button>
+            <button class="hitbox" data-part="bocinas" style="top: 38%; left: 67%; width: 15%; height: 25%;"></button>
+            <button class="hitbox" data-part="webcam" style="top: 13%; left: 45%; width: 10%; height: 6%;"></button>
+            <button class="hitbox" data-part="microfono" style="top: 25%; left: 82%; width: 6%; height: 15%;"></button>
+            <button class="hitbox" data-part="impresora" style="top: 62%; left: 78%; width: 18%; height: 25%;"></button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

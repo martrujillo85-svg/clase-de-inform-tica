@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuarto Informática</title>
+    <!-- FUENTE MODERNA (Poppins) DESDE GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. BARRA DE NAVEGACIÓN PRINCIPAL (HEADER PERMANENTE) -->
+    <header class="main-header">
+        <div class="logo-container" onclick="showSection('home')" style="cursor: pointer;">
+            <h1>💻 Cuarto Informática</h1>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#" onclick="showSection('home')" class="nav-link active">Inicio</a></li>
+                
+                <!-- MENÚ DESPLEGABLE ACTIVIDADES -->
+                <li class="dropdown">
+                    <a href="#" class="nav-link">ACTIVIDADES ▾</a>
+                    <div class="dropdown-content">
+                        <!-- Enlace a la Semana 1 -->
+                        <a href="#" onclick="showWeek(1)">Semana 1</a>
+                        <!-- Aquí irás agregando Semana 2, Semana 3, etc. -->
+                    </div>
+                </li>
+
+                <!-- BOTONES SECUNDARIOS -->
+                <li><a href="#" onclick="showSection('juegos')" class="nav-link">🎮 Juegos</a></li>
+                <li><a href="#" onclick="showSection('infografias')" class="nav-link">📊 Infografías</a></li>
+                <li><a href="#" onclick="showSection('enlaces')" class="nav-link">🌐 Enlaces</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. CONTENEDOR DINÁMICO DE CONTENIDOS -->
+    <main class="content-container">
+
+        <!-- ========================================================
+             SECCIÓN 1: INICIO (HOME) - TARJETA Y MÓDULOS INFERIORES
+             ======================================================== -->
+        <section id="home" class="main-section">
+            
+            <!-- TARJETA PRINCIPAL DE BIENVENIDA -->
+            <div class="hero-card">
+                <h2>¡Bienvenidos a Cuarto Informática!</h2>
+                <p>Explora nuestras actividades semanales, juegos e infografías.</p>
+                
+                <!-- Imagen Central del Inicio -->
+                <div class="hero-img-container">
+                    <img src="img/fondo.png" alt="Informática Educativa" class="hero-img">
+                </div>
+
+                <p style="font-weight: bold; color: #46178f; margin-top: 15px;">
+                    Selecciona una opción del menú superior o en los módulos de abajo para comenzar.
+                </p>
+            </div>
+
+            <!-- CUADROS / TARJETAS DE COLORES INFERIORES -->
+           <div class="features-grid">
+    <div class="feature-card card-blue" onclick="showWeek(1)" style="cursor: pointer;">
+        <h3>💻 Actividades por Semana</h3>
+        <p>Accede al mapa interactivo y quizes semanales.</p>
+    </div>
+
+    <div class="feature-card card-red" onclick="showSection('juegos')" style="cursor: pointer;">
+        <h3>🎮 Juegos Interactivos</h3>
+        <p>Desafíos educativos para practicar jugando.</p>
+    </div>
+
+    <div class="feature-card card-green" onclick="showSection('infografias')" style="cursor: pointer;">
+        <h3>📊 Infografías</h3>
+        <p>Material visual interactivo y resúmenes de clase.</p>
+    </div>
+</div>
+
+        </section>
+
+
+        <!-- ========================================================
+             SECCIÓN 2: VISTA GENERAL DE SEMANAS
+             (JavaScript insertará el mapa al dar clic en Actividad 1)
+             ======================================================== -->
+        <section id="semana-view" class="main-section hidden">
+            <div class="hero-card">
+                <h2 id="semana-titulo">Título de la Semana</h2>
+                <p id="semana-descripcion">Selecciona una actividad para comenzar.</p>
+                
+                <!-- Botones de actividades (Pestañas) -->
+                <div id="actividades-lista" class="activity-tabs"></div>
+
+                <!-- Recuadro donde se insertará el mapa o quiz dinámicamente -->
+                <div id="actividad-pantalla" class="activity-content"></div>
+            </div>
+        </section>
+
+
+        <!-- ========================================================
+             SECCIONES SECUNDARIAS
+             ======================================================== -->
+        <section id="juegos" class="main-section hidden">
+            <div class="hero-card">
+                <h2>🎮 Galería de Juegos</h2>
+                <p>Próximamente más desafíos interactivos.</p>
+            </div>
+        </section>
+
+        <section id="infografias" class="main-section hidden">
+            <div class="hero-card">
+                <h2>📊 Infografías Didácticas</h2>
+                <p>Recursos visuales para la materia.</p>
+            </div>
+        </section>
+
+        <section id="enlaces" class="main-section hidden">
+            <div class="hero-card">
+                <h2>🌐 Enlaces de Interés</h2>
+                <p>Sitios recomendados de apoyo educativo.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 3. ARCHIVO DE LÓGICA EN JAVASCRIPT -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Reemplaza 'img/fondo.jpg' por la ruta y nombre real de tu imagen */
+    background-image: url('img/16.jpg'); 
+    background-size: cover;       /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat;/* Evita que la imagen se repita en mosaico */
+    background-attachment: fixed;/* Mantiene el fondo fijo al desplazarse */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+.kahoot-card {
+    background: #ffffff;
+    max-width: 850px;
+    width: 100%;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.hidden { display: none; }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.timer-badge {
+    background: #e21b3c;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+#question-text {
+    font-size: 1.3rem;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.image-container {
+    width: 100%;
+    max-height: 220px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Grilla de Opciones */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.opt-btn {
+    border: none;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.opt-btn:hover { transform: scale(1.02); }
+
+.red { background-color: #e21b3c; }
+.blue { background-color: #1368ce; }
+.yellow { background-color: #d89e00; }
+.green { background-color: #26890c; }
+
+.restart-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #1368ce;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
