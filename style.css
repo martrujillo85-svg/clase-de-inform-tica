@@ -292,3 +292,24 @@ body {
 .hitbox:hover {
     background: rgba(0, 180, 216, 0.3);
 }
+/* Estilos para el visor de Genially en Infografías */
+.genially-container {
+    position: relative;
+    width: 100%;
+    max-width: 950px;
+    height: 0;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    margin: 20px auto 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.genially-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
