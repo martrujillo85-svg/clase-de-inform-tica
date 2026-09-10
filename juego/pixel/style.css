@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   
+    background-image: url('/juego/pixel/img/fondopixel.jpg'); 
+    background-size: cover;       
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+.pixel-app-container {
+    /* Blanco con 85% de opacidad y efecto de desenfoque */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    max-width: 1020px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+header h2 {
+    color: #46178f;
+    margin-bottom: 4px;
+}
+
+header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.workspace {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Panel Izquierdo de Herramientas en Cuadros */
+.tools-panel {
+    width: 280px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.tools-panel h3 {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.tool-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.1s, border-color 0.1s;
+}
+
+.tool-box:hover {
+    transform: scale(1.1);
+    border-color: #333;
+}
+
+.texture-palette {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.texture-box {
+    padding: 8px 6px;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #333;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.texture-box:hover {
+    background: #e2e8f0;
+    transform: scale(1.02);
+}
+
+.texture-box.eraser {
+    grid-column: span 2;
+    background: #fee2e2;
+    color: #991b1b;
+    border-color: #f87171;
+    justify-content: center;
+}
+
+.clear-btn {
+    width: 100%;
+    padding: 10px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.clear-btn:hover {
+    background: #b91c1c;
+}
+
+/* Panel Derecho: Cuadrícula Grande */
+.canvas-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 15px;
+    overflow: auto;
+}
+
+.pixel-grid {
+    display: grid;
+    grid-template-columns: repeat(22, 22px);
+    grid-template-rows: repeat(22, 22px);
+    gap: 1px;
+    background-color: #e2e8f0;
+    border: 2px solid #94a3b8;
+}
+
+.pixel-cell {
+    background-color: #ffffff;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    user-select: none;
+}
+
+.pixel-cell:hover {
+    background-color: #f1f5f9;
+}

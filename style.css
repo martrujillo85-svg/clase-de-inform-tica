@@ -363,3 +363,35 @@ body {
     text-align: center;
     margin: 0;
 }
+/* Estilo Morado Semi-Transparente para los cuadros */
+.card-purple-transparent {
+    background: rgba(88, 28, 135, 0.75) !important; /* Morado con 75% de opacidad */
+    backdrop-filter: blur(10px); /* Efecto cristal translúcido */
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 18px !important;
+    padding: 25px 20px !important;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+    transition: transform 0.3s ease, background 0.3s ease !important;
+}
+
+.card-purple-transparent:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(109, 40, 217, 0.88) !important; /* Un poco más claro/brillante al pasar el ratón */
+    border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Colores de texto en blanco para visibilidad perfecta */
+.card-purple-transparent h3 {
+    color: #ffffff !important;
+    font-size: 1.3rem !important;
+    font-weight: bold !important;
+    margin-bottom: 8px !important;
+}
+
+.card-purple-transparent p {
+    color: #f3e8ff !important; /* Blanco liláceo muy legible */
+    font-size: 0.95rem !important;
+    margin: 0 !important;
+}

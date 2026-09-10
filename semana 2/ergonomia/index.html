@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspector de Ergonomía</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="inspector-container">
+        <h2>🕵️‍♂️ Inspector de Ergonomía</h2>
+        <p class="subtitle">Ajusta los elementos del puesto de trabajo para que el personaje adopte una postura saludable.</p>
+
+        <div class="workspace">
+            <!-- Escenario interactivo -->
+            <div class="character-box">
+                <div id="character-status" class="status-badge">⚠️ Postura Incorrecta</div>
+                <div class="interactive-stage">
+                    <div id="monitor-element" class="element monitor pos-low">🖥️ Monitor (Bajo)</div>
+                    <div id="chair-element" class="element chair pos-low">🪑 Silla (Baja)</div>
+                    <div id="feet-element" class="element feet pos-hanging">🦶 Pies (Colgando)</div>
+                </div>
+            </div>
+
+            <!-- Panel de Controles / Lista de Comprobación -->
+            <div class="controls-panel">
+                <h3>Lista de Ajustes:</h3>
+                
+                <div class="control-group">
+                    <label>1. Altura del Monitor:</label>
+                    <button onclick="adjustElement('monitor', 'low')">Muy Bajo</button>
+                    <button onclick="adjustElement('monitor', 'correct')">A la altura de los ojos</button>
+                </div>
+
+                <div class="control-group">
+                    <label>2. Posición de Espalda/Silla:</label>
+                    <button onclick="adjustElement('chair', 'low')">Reclinado / Encorvado</button>
+                    <button onclick="adjustElement('chair', 'correct')">Recta y apoyada</button>
+                </div>
+
+                <div class="control-group">
+                    <label>3. Apoyo de los Pies:</label>
+                    <button onclick="adjustElement('feet', 'hanging')">Colgando</button>
+                    <button onclick="adjustElement('feet', 'correct')">Firmes en el suelo/reposapiés</button>
+                </div>
+
+                <button class="check-btn" onclick="validatePosturalCheck()">🔍 Inspeccionar Postura</button>
+            </div>
+        </div>
+
+        <div id="feedback-result" class="feedback"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

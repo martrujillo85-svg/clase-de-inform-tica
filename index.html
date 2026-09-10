@@ -21,13 +21,14 @@
             <ul>
                 <li><a href="#" onclick="showSection('home')" class="nav-link active">Inicio</a></li>
                 
-                <!-- MENÚ DESPLEGABLE ACTIVIDADES -->
+                <!-- MENÚ DESPLEGABLE "ACTIVIDADES" -->
                 <li class="dropdown">
                     <a href="#" class="nav-link">ACTIVIDADES ▾</a>
                     <div class="dropdown-content">
-                        <!-- Enlace a la Semana 1 -->
                         <a href="#" onclick="showWeek(1)">Semana 1</a>
-                        <!-- Aquí irás agregando Semana 2, Semana 3, etc. -->
+                        <a href="#" onclick="showWeek(2)">Semana 2</a>
+                        <a href="#" onclick="showWeek(3)">Semana 3</a>
+                        <a href="#" onclick="showWeek(4)">Semana 4</a>
                     </div>
                 </li>
 
@@ -54,7 +55,7 @@
                 
                 <!-- Imagen Central del Inicio -->
                 <div class="hero-img-container">
-                    <img src="img/fondo.png" alt="Informática Educativa" class="hero-img">
+                    <img src="img/sep.jpg" alt="Informática Educativa" class="hero-img">
                 </div>
 
                 <p style="font-weight: bold; color: #46178f; margin-top: 15px;">
@@ -63,8 +64,9 @@
             </div>
 
             <!-- CUADROS / TARJETAS DE COLORES INFERIORES -->
-           <div class="features-grid">
-    <div class="feature-card card-blue" onclick="showWeek(1)" style="cursor: pointer;">
+    <div class="features-grid">
+
+        <div class="feature-card card-blue" onclick="showSection('semanas-catalogo')" style="cursor: pointer;">
         <h3>💻 Actividades por Semana</h3>
         <p>Accede al mapa interactivo y quizes semanales.</p>
     </div>
@@ -104,13 +106,22 @@
         <!-- ========================================================
              SECCIONES SECUNDARIAS
              ======================================================== -->
-        <!-- SECCIÓN JUEGOS -->
+       <!-- SECCIÓN JUEGOS -->
 <section id="juegos" class="main-section hidden">
     <div class="hero-card">
         <h2>🎮 Juegos Educativos Online</h2>
-        <p>Selecciona una plataforma para explorar y aprender jugando.</p>
+        <p>Selecciona una plataforma o actividad interactiva para divertirte.</p>
 
+        <!-- Cuadrícula de Juegos -->
         <div class="games-grid">
+            
+            <!-- TARJETA: Creador Pixel Art (Tu actividad interactiva local) -->
+            <div class="game-card" onclick="loadPixelGame()" style="cursor: pointer; border: 3px solid #46178f;">
+                <div class="game-icon">🎨</div>
+                <h3>Creador Pixel Art</h3>
+                <p>Diseña fantasía píxel a píxel.</p>
+            </div>
+
             <!-- Juegos Infantiles PUM -->
             <a href="https://www.juegosinfantilespum.com/" target="_blank" rel="noopener noreferrer" class="game-card">
                 <div class="game-icon">🧩</div>
@@ -139,6 +150,9 @@
                 <p>Colección de dinámicas y juegos educativos en línea.</p>
             </a>
         </div>
+
+        <!-- Contenedor dinámico donde se abrirá el Pixel Art al hacer clic en su tarjeta -->
+        <div id="pixel-game-container" style="margin-top: 20px;"></div>
     </div>
 </section>
 
@@ -161,6 +175,19 @@
             </iframe>
         </div>
     </div>
+
+    <!-- PRESENTACIÓN 2: Ergonomía c -->
+        <div class="info-block">
+            <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🧘 Ergonomía al Usar la Computadora</h3>
+            <div class="genially-container">
+                <iframe 
+                    title="Presentación y Video de Ergonomía" 
+                    src="infografia/ergonomia.mp4"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen="true">
+                </iframe>
+            </div>
+        </div>
 </section>
 
         <section id="enlaces" class="main-section hidden">
@@ -169,6 +196,17 @@
                 <p>Sitios recomendados de apoyo educativo.</p>
             </div>
         </section>
+
+<!-- SECCIÓN: CATÁLOGO DE TODAS LAS SEMANAS -->
+<section id="semanas-catalogo" class="main-section hidden">
+    <div class="hero-card">
+        <h2 style="color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">📚 Actividades Semanales</h2>
+        <p style="color: #ffffff; opacity: 0.9;">Selecciona una semana para explorar sus actividades y ejercicios interactivos.</p>
+
+        <!-- JavaScript insertará las tarjetas automáticamente -->
+        <div id="grid-semanas" class="features-grid"></div>
+    </div>
+</section>
 
     </main>
 

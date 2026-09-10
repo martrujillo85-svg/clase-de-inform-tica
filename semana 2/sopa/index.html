@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopa de Letras - Ergonomía</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body {
+            background-color: #f4f0fa;
+            color: #333;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 { color: #46178f; margin-bottom: 5px; }
+        p { margin-top: 0; color: #555; }
+        
+        .container {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Cuadrícula de la Sopa de Letras */
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(10, 38px);
+            grid-template-rows: repeat(10, 38px);
+            gap: 4px;
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            user-select: none;
+        }
+
+        .cell {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background: #f0eafc;
+            color: #46178f;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .cell:hover { background: #dcd0f7; }
+        .cell.selected { background: #ffc107; color: #000; }
+        .cell.found { background: #28a745; color: #fff; }
+
+        /* Lista de Palabras */
+        .words-card {
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 200px;
+        }
+
+        .words-card h3 { color: #46178f; margin-top: 0; border-bottom: 2px solid #f0eafc; padding-bottom: 5px; }
+        
+        .word-list { list-style: none; padding: 0; margin: 0; }
+        .word-list li {
+            padding: 6px 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #555;
+            transition: color 0.3s;
+        }
+        .word-list li.completed {
+            text-decoration: line-through;
+            color: #28a745;
+        }
+
+        #win-msg {
+            display: none;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🧩 Sopa de Letras: Ergonomía</h2>
+    <p>Haz clic en las letras para seleccionar y encontrar las palabras clave:</p>
+
+    <div class="container">
+        <!-- Rejilla 10x10 -->
+        <div id="grid"></div>
+
+        <!-- Palabras a encontrar -->
+        <div class="words-card">
+            <h3>Palabras:</h3>
+            <ul class="word-list">
+                <li id="word-POSTURA">📏 POSTURA</li>
+                <li id="word-ESPALDA">🪑 ESPALDA</li>
+                <li id="word-CUELLO">🦒 CUELLO</li>
+                <li id="word-DESCANSO">⏰ DESCANSO</li>
+                <li id="word-VISON">👀 VISION</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="win-msg">🎉 ¡Excelente! Encontraste todas las palabras sobre Ergonomía.</div>
+
+    <script>
+        // Matriz 10x10 con palabras escondidas de Ergonomía
+        const board = [
+            ['P','H','S','T','O','R','A','X','E','M'],
+            ['E','O','P','A','L','D','A','A','N','T'],
+            ['X','Z','S','K','J','H','P','O','D','C'],
+            ['M','A','O','T','L','E','I','N','B','U'],
+            ['Q','W','E','R','U','S','U','I','O','E'],
+            ['D','E','S','D','I','R','S','O','A','L'],
+            ['Z','X','A','V','B','N','A','K','L','L'],
+            ['V','A','A','D','L','A','P','S','E','O'],
+            ['O','S','N','A','C','S','E','D','C','R'],
+            ['F','V','G','B','H','N','J','M','K','L']
+        ];
+
+        const targetWords = ["POSTURA", "ESPALDA", "CUELLO", "DESCANSO", "VISION"];
+        let foundWords = [];
+        let selectedCoords = [];
+
+        const gridEl = document.getElementById('grid');
+
+        // Renderizar la rejilla
+        function createGrid() {
+            gridEl.innerHTML = '';
+            for (let r = 0; r < 10; r++) {
+                for (let c = 0; c < 10; c++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.textContent = board[r][c];
+                    cell.dataset.row = r;
+                    cell.dataset.col = c;
+                    cell.onclick = () => selectCell(cell, r, c);
+                    gridEl.appendChild(cell);
+                }
+            }
+        }
+
+        function selectCell(cell, r, c) {
+            if (cell.classList.contains('found')) return;
+
+            // Si ya está seleccionada, la quitamos
+            if (cell.classList.contains('selected')) {
+                cell.classList.remove('selected');
+                selectedCoords = selectedCoords.filter(item => !(item.r === r && item.c === c));
+            } else {
+                cell.classList.add('selected');
+                selectedCoords.push({ r, c, letter: board[r][c] });
+            }
+
+            checkSelection();
+        }
+
+        function checkSelection() {
+            const currentWord = selectedCoords.map(item => item.letter).join('');
+            const reversedWord = currentWord.split('').reverse().join('');
+
+            targetWords.forEach(word => {
+                if (!foundWords.includes(word) && (currentWord === word || reversedWord === word)) {
+                    foundWords.push(word);
+                    
+                    // Marcar como encontrada
+                    selectedCoords.forEach(item => {
+                        const cell = document.querySelector(`[data-row='${item.r}'][data-col='${item.c}']`);
+                        if (cell) {
+                            cell.classList.remove('selected');
+                            cell.classList.add('found');
+                        }
+                    });
+
+                    // Tachamos la palabra en la lista
+                    const listEl = document.getElementById(`word-${word === 'VISION' ? 'VISON' : word}`);
+                    if (listEl) listEl.classList.add('completed');
+
+                    selectedCoords = [];
+
+                    // Comprobar victoria
+                    if (foundWords.length === targetWords.length) {
+                        document.getElementById('win-msg').style.display = 'block';
+                    }
+                }
+            });
+        }
+
+        createGrid();
+    </script>
+</body>
+</html>

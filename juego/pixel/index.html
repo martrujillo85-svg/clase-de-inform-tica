@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creador de Paisajes en Píxeles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pixel-app-container">
+        <header>
+            <h2>🎨 Creador de Paisajes Naturales</h2>
+            <p>Selecciona un color o textura y pinta tu propio escenario en la cuadrícula.</p>
+        </header>
+
+        <div class="workspace">
+            <!-- PANEL IZQUIERDO: Herramientas de Colores y Texturas en Cuadrados -->
+            <div class="tools-panel">
+                <h3>Paleta de Colores</h3>
+                <div class="color-palette">
+                    <!-- Tonos Cielo y Azul -->
+                    <button class="tool-box" style="background: #87CEEB;" onclick="selectTool('#87CEEB', 'color')" title="Celeste"></button>
+                    <button class="tool-box" style="background: #4682B4;" onclick="selectTool('#4682B4', 'color')" title="Azul Acero"></button>
+                    <button class="tool-box" style="background: #00B4D8;" onclick="selectTool('#00B4D8', 'color')" title="Azul Agua"></button>
+                    <button class="tool-box" style="background: #1E3A8A;" onclick="selectTool('#1E3A8A', 'color')" title="Azul Profundo"></button>
+                    
+                    <!-- Tonos Vegetación -->
+                    <button class="tool-box" style="background: #32CD32;" onclick="selectTool('#32CD32', 'color')" title="Verde Lima"></button>
+                    <button class="tool-box" style="background: #228B22;" onclick="selectTool('#228B22', 'color')" title="Verde Follaje"></button>
+                    <button class="tool-box" style="background: #556B2F;" onclick="selectTool('#556B2F', 'color')" title="Verde Militar"></button>
+                    <button class="tool-box" style="background: #ADFF2F;" onclick="selectTool('#ADFF2F', 'color')" title="Verde Claro"></button>
+
+                    <!-- Tonos Tierra y Roca -->
+                    <button class="tool-box" style="background: #8B4513;" onclick="selectTool('#8B4513', 'color')" title="Café Tierra"></button>
+                    <button class="tool-box" style="background: #D2B48C;" onclick="selectTool('#D2B48C', 'color')" title="Café Arena"></button>
+                    <button class="tool-box" style="background: #708090;" onclick="selectTool('#708090', 'color')" title="Gris Roca"></button>
+                    <button class="tool-box" style="background: #A9A9A9;" onclick="selectTool('#A9A9A9', 'color')" title="Gris Claro"></button>
+
+                    <!-- Tonos Extras y Sol -->
+                    <button class="tool-box" style="background: #FFD700;" onclick="selectTool('#FFD700', 'color')" title="Amarillo Sol"></button>
+                    <button class="tool-box" style="background: #FF4500;" onclick="selectTool('#FF4500', 'color')" title="Naranja Atardecer"></button>
+                    <button class="tool-box" style="background: #FF69B4;" onclick="selectTool('#FF69B4', 'color')" title="Rosa"></button>
+                    <button class="tool-box" style="background: #FFFFFF; border: 1px solid #999;" onclick="selectTool('#FFFFFF', 'color')" title="Blanco"></button>
+               
+                    <!-- Nuevos Colores: Negro, Morado, Rojo y Gris -->
+<button class="tool-box" style="background: #000000;" onclick="selectTool('#000000', 'color')" title="Negro"></button>
+<button class="tool-box" style="background: #7E22CE;" onclick="selectTool('#7E22CE', 'color')" title="Morado"></button>
+<button class="tool-box" style="background: #EF4444;" onclick="selectTool('#EF4444', 'color')" title="Rojo"></button>
+<button class="tool-box" style="background: #05f7f7;" onclick="selectTool('#05f7f7', 'color')" title="Aqua"></button>
+                </div>
+
+                <h3>Elementos y Texturas</h3>
+                <div class="texture-palette">
+                    <button class="texture-box" onclick="selectTool('☁️', 'texture')">☁️ <span>Nube</span></button>
+                    <button class="texture-box" onclick="selectTool('🌳', 'texture')">🌳 <span>Árbol</span></button>
+                    <button class="texture-box" onclick="selectTool('⛰️', 'texture')">⛰️ <span>Montaña</span></button>
+                    <button class="texture-box" onclick="selectTool('💧', 'texture')">💧 <span>Agua</span></button>
+                    <button class="texture-box" onclick="selectTool('🏠', 'texture')">🏠 <span>Casa</span></button>
+                    <button class="texture-box" onclick="selectTool('🏰', 'texture')">🏰 <span>Castillo</span></button>
+                    <button class="texture-box eraser" onclick="selectTool('', 'eraser')">🧹 <span>Borrador</span></button>
+                </div>
+
+                <button class="clear-btn" onclick="clearGrid()">🗑️ Limpiar Lienzo</button>
+            </div>
+
+            <!-- PANEL DERECHO: Cuadrícula Grande -->
+            <div class="canvas-container">
+                <div id="pixel-grid" class="pixel-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
