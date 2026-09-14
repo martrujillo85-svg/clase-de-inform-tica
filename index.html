@@ -156,40 +156,34 @@
     </div>
 </section>
 
-        <!-- SECCIÓN INFOGRAFÍAS -->
+<!-- SECCIÓN INFOGRAFÍAS Y PRESENTACIONES -->
 <section id="infografias" class="main-section hidden">
     <div class="hero-card">
         <h2>📊 Infografías y Presentaciones</h2>
-        <p>Explora el material interactivo para repasar las lecciones.</p>
+        <p>Selecciona una presentación o infografía para explorarla en detalle.</p>
 
-        <!-- Contenedor del Genially -->
-        <div class="genially-container">
-            <iframe 
-                title="Presentación Genially" 
-                src="https://view.genially.com/68b0635e3064a329646a509a" 
-                type="text/html" 
-                allowscriptaccess="always" 
-                allowfullscreen="true" 
-                scrolling="yes" 
-                allownetworking="all">
-            </iframe>
-        </div>
-    </div>
+        <!-- Cuadrícula de tarjetas de infografías -->
+        <div class="features-grid" id="grid-infografias">
+            <div class="feature-card card-blue" onclick="showInfografia('genially')" style="cursor: pointer;">
+                <h3>✨ Presentación Genially</h3>
+                <p>Material interactivo y guías visuales de clase.</p>
+            </div>
 
-    <!-- PRESENTACIÓN 2: Ergonomía c -->
-        <div class="info-block">
-            <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🧘 Ergonomía al Usar la Computadora</h3>
-            <div class="genially-container">
-                <iframe 
-                    title="Presentación y Video de Ergonomía" 
-                    src="infografia/ergonomia.mp4"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen="true">
-                </iframe>
+            <div class="feature-card card-red" onclick="showInfografia('ergonomia')" style="cursor: pointer;">
+                <h3>🧘 Ergonomía Informática</h3>
+                <p>Video y consejos sobre posturas saludables frente al equipo.</p>
             </div>
         </div>
-</section>
 
+        <!-- Botón para regresar al catálogo (oculto por defecto) -->
+        <button id="btn-volver-infografias" class="nav-link hidden" onclick="cerrarInfografia()" style="margin-bottom: 20px; background: #46178f; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
+            ← Volver al catálogo de infografías
+        </button>
+
+        <!-- Contenedor dinámico donde se cargará la infografia seleccionada -->
+        <div id="infografia-pantalla" class="activity-content" style="margin-top: 20px;"></div>
+    </div>
+</section>
         <section id="enlaces" class="main-section hidden">
             <div class="hero-card">
                 <h2>🌐 Enlaces de Interés</h2>

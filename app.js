@@ -251,3 +251,49 @@ function closePixelGame() {
         gamesGrid.style.display = 'grid';
     }
 }
+function showInfografia(tipo) {
+    const grid = document.getElementById('grid-infografias');
+    const pantalla = document.getElementById('infografia-pantalla');
+    const btnVolver = document.getElementById('btn-volver-infografias');
+
+    // Ocultar la cuadrícula y mostrar el botón de regreso
+    grid.style.display = 'none';
+    btnVolver.classList.remove('hidden');
+
+    if (tipo === 'genially') {
+        pantalla.innerHTML = `
+            <div class="genially-container">
+                <iframe 
+                    title="Presentación Genially" 
+                    src="https://view.genially.com/68b0635e3064a329646a509a" 
+                    type="text/html" 
+                    allowscriptaccess="always" 
+                    allowfullscreen="true" 
+                    scrolling="yes" 
+                    allownetworking="all">
+                </iframe>
+            </div>
+        `;
+    } else if (tipo === 'ergonomia') {
+        pantalla.innerHTML = `
+            <div class="info-block">
+                <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🧘 Ergonomía al Usar la Computadora</h3>
+                <video controls class="hero-img" style="width: 100%; border-radius: 12px;">
+                    <source src="infografia/ergonomia.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </div>
+        `;
+    }
+}
+
+function cerrarInfografia() {
+    const grid = document.getElementById('grid-infografias');
+    const pantalla = document.getElementById('infografia-pantalla');
+    const btnVolver = document.getElementById('btn-volver-infografias');
+
+    // Restaurar la vista de la cuadrícula
+    grid.style.display = 'grid'; // O el valor que use tu clase .features-grid (ej. flex, grid)
+    pantalla.innerHTML = '';
+    btnVolver.classList.add('hidden');
+}
