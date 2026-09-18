@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arma tu Escritorio Pro - Windows</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="activity-wrapper">
+        <header class="app-header">
+            <h2>🖥️ Armador Escritorio</h2>
+            <p>Arrastra cada componente desde la bandeja inferior hasta su espacio correspondiente:</p>
+            <div class="score-container">Puntos: <strong id="score">0</strong> / 11</div>
+        </header>
+
+        <!-- ESCRITORIO SIMULADO -->
+        <div id="desktop-canvas" class="desktop-canvas">
+            <!-- Zona de Fondo de Pantalla -->
+            <div class="dropzone zone-wallpaper" data-target="wallpaper">
+                <span class="placeholder-text"><img src="img/fondo.jpg" alt="preview" style="width:22px; vertical-align:middle; margin-right:4px;"> Suelta aquí el Fondo de Pantalla</span>
+            </div>
+
+            <!-- Iconos de Escritorio -->
+            <div class="desktop-icons-area">
+                <div class="dropzone-icon" data-target="chrome"><span class="placeholder-hint">Chrome</span></div>
+                <div class="dropzone-icon" data-target="edge"><span class="placeholder-hint">Edge</span></div>
+                <div class="dropzone-icon" data-target="word"><span class="placeholder-hint">Word</span></div>
+                <div class="dropzone-icon" data-target="papelera"><span class="placeholder-hint">Papelera</span></div>
+                <div class="dropzone-icon" data-target="carpetas"><span class="placeholder-hint">Carpeta</span></div>
+            </div>
+
+            <!-- BARRA DE TAREAS DIVIDIDA (INFERIOR) -->
+            <footer class="split-taskbar">
+                <div class="dropzone-tb zone-start" data-target="start">⊞ Inicio</div>
+                <div class="dropzone-tb zone-search" data-target="search">Buscar...</div>
+                <div class="dropzone-tb zone-shortcut" data-target="excel">Excel</div>
+                <div class="dropzone-tb zone-shortcut" data-target="shortcut-folder">Archivos</div>
+                <div class="dropzone-tb zone-notify" data-target="notify">📶 🔊 10:00 a. m.</div>
+            </footer>
+        </div>
+
+        <!-- BANDEJA DE ELEMENTOS ARRASTRABLES -->
+        <div class="elements-tray">
+            <h3>Componentes disponibles:</h3>
+            <div class="drag-items-container" id="tray">
+                <div class="draggable-item" draggable="true" data-type="wallpaper"><img src="img/fondo.jpg" alt="fondo" style="width:24px; vertical-align:middle;"> </div>
+                <div class="draggable-item" draggable="true" data-type="chrome"><img src="img/chrome.png" alt="edge" style="width:24px; vertical-align:middle;"></div>
+                <div class="draggable-item" draggable="true" data-type="edge"><img src="img/edge.png" alt="chrome" style="width:24px; vertical-align:middle;"></div>
+                <div class="draggable-item" draggable="true" data-type="word"><img src="img/w.png" alt="word" style="width:24px; vertical-align:middle;"></div>
+                <div class="draggable-item" draggable="true" data-type="papelera"><img src="img/pape.png" alt="papelera" style="width:24px; vertical-align:middle;"></div>
+                <div class="draggable-item" draggable="true" data-type="carpetas"><img src="img/carpeta.png" alt="carpeta" style="width:24px; vertical-align:middle;"></div>
+                <div class="draggable-item" draggable="true" data-type="start">⊞ Botón de Inicio</div>
+                <div class="draggable-item" draggable="true" data-type="search">🔍 Barra Búsqueda</div>
+                <div class="draggable-item" draggable="true" data-type="excel"><img src="img/excel.png" alt="excel" style="width:24px; vertical-align:middle;"></div>
+                <div class="draggable-item" draggable="true" data-type="shortcut-folder"><img src="img/carpeta.png" alt="carpeta" style="width:24px; vertical-align:middle;"></div>
+                <div class="draggable-item" draggable="true" data-type="notify">📶 🔊 Hora y Sonido</div>
+            </div>
+        </div>
+
+        <div id="feedback-msg" class="feedback-msg"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

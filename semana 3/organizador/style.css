@@ -1,0 +1,107 @@
+* 
+{ 
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{ 
+    background: #f0f4f8; 
+    display: flex; justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    padding: 20px; 
+}
+.activity-card
+{
+    background: white; 
+    width: 100%; 
+    max-width: 750px; 
+    padding: 25px; 
+    border-radius: 16px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+    text-align: center; 
+}
+h2 
+{ 
+    color: #46178f; 
+    margin-bottom: 5px; 
+}
+.subtitle 
+{ 
+    color: #555;
+    margin-bottom: 20px;
+}
+.game-header
+ { 
+    background: #f8f9fa;
+    padding: 15px; 
+    border-radius: 12px; 
+    margin-bottom: 25px; 
+    border: 2px dashed #cbd5e1; 
+}
+.score
+{ 
+    font-size: 1.1rem; 
+    color: #334155; 
+    margin-bottom: 10px; 
+}
+.item-to-classify 
+{ 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 12px; font-size: 1.4rem; 
+    font-weight: bold; 
+    color: #1e293b;
+ }
+.file-icon 
+{
+    font-size: 2.2rem; 
+}
+.folders-grid 
+{
+     display: grid; 
+     grid-template-columns: 1fr 1fr; 
+     gap: 15px; 
+    }
+.folder-btn
+{
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    padding: 20px; 
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    font-weight: bold;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.folder-btn:hover
+{ border-color: #46178f;
+    background: #f3e8ff;
+    transform: translateY(-2px);
+}
+.folder-icon
+{ font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+.feedback
+{ margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-height: 30px;
+}
+.feedback.correct
+{
+    color: #16a34a;
+}
+.feedback.wrong 
+{ 
+    color: #dc2626; 
+}

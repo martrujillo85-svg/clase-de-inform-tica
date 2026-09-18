@@ -18,11 +18,12 @@ const contenidoSemanas = {
         ]
     },
     3: {
-        titulo: "Semana 3: Próximamente",
-        descripcion: "",
-        actividades: [
-            
-        ]
+        titulo: "Semana 3: Archivos y Carpetas",
+    descripcion: "Aprende cómo se organizan los archivos en el equipo:",
+    actividades: [
+        { id: 1, nombre: "📁 Actividad 1: Organizador de Archivos" },
+        { id: 2, nombre: "📁 Actividad 2: Escritorio" }
+    ]
     },
     4: {
         titulo: "Semana 4: Repaso General",
@@ -213,6 +214,20 @@ function loadActivity(weekNumber, activityId) {
         screen.innerHTML = `
             <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
                 <iframe src="semana 2/sopa/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Sopa de Letras - Ergonomía"></iframe>
+            </div>
+        `;
+    } else if (weekNumber === 3 && activityId === 1) {
+        // Semana 3 - Actividad 1: Organizador de archivos
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 3/organizador/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Organizador de Archivos"></iframe>
+            </div>
+        `;
+    } else if (weekNumber === 3 && activityId === 2) {
+        // Semana 3 - Actividad 2: Escritorio
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 3/escritorio/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
             </div>
         `;
     }

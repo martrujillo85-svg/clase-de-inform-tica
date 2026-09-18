@@ -1,0 +1,117 @@
+* { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
+body { background: #0f172a; color: white; display: flex; justify-content: center; padding: 15px; min-height: 100vh; }
+
+.activity-wrapper { background: #1e293b; width: 100%; max-width: 980px; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; flex-direction: column; gap: 15px; }
+.app-header { text-align: center; }
+.app-header h2 { color: #38bdf8; margin-bottom: 4px; font-size: 1.2rem; }
+.score-container { font-size: 1rem; color: #4ade80; margin-top: 4px; }
+
+/* Escritorio simulado */
+.desktop-canvas {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background: #020617;
+    border: 3px dashed #475569;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.zone-wallpaper {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    display: flex; justify-content: center; align-items: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.9rem;
+}
+.desktop-canvas.has-wallpaper {
+    background-image: url('img/fondo.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+.desktop-icons-area {
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 85px);
+    gap: 10px;
+    width: 290px;
+}
+
+.dropzone-icon {
+    width: 80px; height: 72px;
+    border: 2px dashed rgba(255,255,255,0.3);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.3);
+    font-size: 0.72rem; text-align: center;
+    color: rgba(255,255,255,0.6);
+}
+
+/* Barra de tareas dividida */
+.split-taskbar {
+    position: relative;
+    z-index: 3;
+    height: 52px;
+    background: rgba(15, 23, 42, 0.92);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+}
+
+.dropzone-tb {
+    height: 38px;
+    border: 1.5px dashed rgba(255,255,255,0.35);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.7);
+    padding: 0 10px;
+    background: rgba(255,255,255,0.05);
+}
+
+.zone-start { width: 85px; }
+.zone-search { flex: 1; max-width: 170px; }
+.zone-shortcut { width: 80px; }
+.zone-notify { margin-left: auto; width: 135px; }
+
+.dropzone.highlight, .dropzone-icon.highlight, .dropzone-tb.highlight {
+    border-color: #38bdf8 !important;
+    background: rgba(56, 189, 248, 0.25) !important;
+}
+
+.dropzone.placed, .dropzone-icon.placed, .dropzone-tb.placed {
+    border-style: solid;
+    border-color: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.18);
+    color: white;
+}
+
+
+/* Bandeja */
+.elements-tray { background: #0f172a; padding: 12px 15px; border-radius: 12px; border: 1px solid #334155; }
+.elements-tray h3 { font-size: 0.88rem; margin-bottom: 8px; color: #94a3b8; }
+.drag-items-container { display: flex; flex-wrap: wrap; gap: 7px; }
+
+.draggable-item {
+    background: #334155;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: grab;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border: 1px solid #475569;
+}
+.draggable-item:hover { background: #475569; }
+.draggable-item.hidden-drag { display: none; }
+
+.feedback-msg { text-align: center; font-weight: bold; min-height: 24px; font-size: 0.95rem; color: #4ade80; }

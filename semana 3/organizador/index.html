@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Archivos</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+        body { background: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 20px; height: 100vh; }
+        h2 { color: #46178f; margin-bottom: 5px; text-align: center; }
+        p.instruction { color: #555; margin-bottom: 15px; text-align: center; font-size: 0.95rem; }
+        
+        .game-container { display: flex; gap: 20px; width: 100%; max-width: 900px; height: 450px; }
+        
+        /* Panel de Archivos (Origen) */
+        .files-panel { width: 35%; background: white; border-radius: 12px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 10px; overflow-y: auto; border: 2px dashed #cbd5e1; }
+        .files-panel h3 { font-size: 1rem; color: #333; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        
+        /* Panel de Carpetas (Destino) */
+        .folders-panel { width: 65%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; align-content: start; overflow-y: auto; }
+        
+        /* Estilo del Archivo Draggable */
+        .file-item { background: #f8fafc; border: 2px solid #cbd5e1; padding: 10px; border-radius: 8px; cursor: grab; display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem; color: #333; transition: transform 0.1s, background 0.2s; user-select: none; }
+        .file-item:active { cursor: grabbing; }
+        .file-item:hover { background: #e2e8f0; transform: scale(1.02); }
+        .file-icon { font-size: 1.5rem; }
+
+        /* Estilo de la Carpeta */
+        .folder-dropzone { background: #fff; border: 3px dashed #94a3b8; border-radius: 12px; padding: 15px; text-align: center; min-height: 130px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.2s; position: relative; }
+        .folder-dropzone.drag-over { background: #ede9fe; border-color: #46178f; transform: scale(1.02); }
+        .folder-icon { font-size: 2.5rem; margin-bottom: 5px; }
+        .folder-title { font-weight: bold; color: #46178f; font-size: 0.95rem; }
+        .folder-content { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; width: 100%; justify-content: center; }
+        
+        /* Elementos ya colocados dentro de la carpeta */
+        .folder-content .file-item { padding: 4px 8px; font-size: 0.75rem; background: #e0e7ff; border-color: #818cf8; cursor: default; }
+
+        .btn-reset { margin-top: 20px; padding: 10px 20px; background: #46178f; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        .btn-reset:hover { background: #321066; }
+        
+        .success-msg { margin-top: 10px; color: #16a34a; font-weight: bold; display: none; }
+    </style>
+</head>
+<body>
+
+    <h2>📁 Organiza los Archivos en su Carpeta</h2>
+    <p class="instruction">Arrastra cada archivo del panel izquierdo hacia la carpeta correcta que le corresponde en Windows.</p>
+
+    <div class="game-container">
+        <!-- ORIGEN: Archivos -->
+        <div class="files-panel" id="files-container">
+            <h3>Archivos sin ordenar</h3>
+            <div class="file-item" draggable="true" id="f1" data-type="texto"><span class="file-icon">📄</span> Tarea.txt</div>
+            <div class="file-item" draggable="true" id="f2" data-type="video"><span class="file-icon">🎬</span> Vacaciones.mp4</div>
+            <div class="file-item" draggable="true" id="f3" data-type="foto"><span class="file-icon">🖼️</span> Paisaje.jpg</div>
+            <div class="file-item" draggable="true" id="f4" data-type="musica"><span class="file-icon">🎵</span> Cancion.mp3</div>
+            <div class="file-item" draggable="true" id="f5" data-type="pdf"><span class="file-icon">📕</span> Libro.pdf</div>
+            <div class="file-item" draggable="true" id="f6" data-type="calculo"><span class="file-icon">📊</span> Gastos.xlsx</div>
+            <div class="file-item" draggable="true" id="f7" data-type="presentacion"><span class="file-icon">📊</span> Exposicion.pptx</div>
+        </div>
+
+        <!-- DESTINO: Carpetas -->
+        <div class="folders-panel">
+            <div class="folder-dropzone" data-category="texto">
+                <div class="folder-icon">📂</div>
+                <div class="folder-title">Documentos de Texto</div>
+                <div class="folder-content"></div>
+            </div>
+            <div class="folder-dropzone" data-category="video">
+                <div class="folder-icon">📂</div>
+                <div class="folder-title">Videos</div>
+                <div class="folder-content"></div>
+            </div>
+            <div class="folder-dropzone" data-category="foto">
+                <div class="folder-icon">📂</div>
+                <div class="folder-title">Imágenes</div>
+                <div class="folder-content"></div>
+            </div>
+            <div class="folder-dropzone" data-category="musica">
+                <div class="folder-icon">📂</div>
+                <div class="folder-title">Música</div>
+                <div class="folder-content"></div>
+            </div>
+            <div class="folder-dropzone" data-category="pdf">
+                <div class="folder-icon">📂</div>
+                <div class="folder-title">Archivos PDF</div>
+                <div class="folder-content"></div>
+            </div>
+            <div class="folder-dropzone" data-category="calculo">
+                <div class="folder-icon">📂</div>
+                <div class="folder-title">Hojas de Cálculo</div>
+                <div class="folder-content"></div>
+            </div>
+            <div class="folder-dropzone" data-category="presentacion">
+                <div class="folder-icon">📂</div>
+                <div class="folder-title">Presentación</div>
+                <div class="folder-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="success-msg" id="successMsg">🎉 ¡Excelente trabajo! Todos los archivos están organizados correctamente.</div>
+    <button class="btn-reset" onclick="resetGame()">Reiniciar Actividad</button>
+
+    <script>
+        const fileItems = document.querySelectorAll('.file-item');
+        const dropzones = document.querySelectorAll('.folder-dropzone');
+        let draggedElement = null;
+
+        fileItems.forEach(item => {
+            item.addEventListener('dragstart', (e) => {
+                draggedElement = item;
+                e.dataTransfer.setData('text/plain', item.id);
+            });
+        });
+
+        dropzones.forEach(zone => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                zone.classList.add('drag-over');
+            });
+
+            zone.addEventListener('dragleave', () => {
+                zone.classList.remove('drag-over');
+            });
+
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                zone.classList.remove('drag-over');
+
+                const category = zone.getAttribute('data-category');
+                const fileType = draggedElement.getAttribute('data-type');
+
+                // Validar si el archivo pertenece a esta carpeta
+                if (category === fileType) {
+                    const contentContainer = zone.querySelector('.folder-content');
+                    contentContainer.appendChild(draggedElement);
+                    draggedElement.setAttribute('draggable', 'false'); // Ya no se mueve más
+                    checkWinCondition();
+                } else {
+                    alert("⚠️ Este archivo no pertenece a esta carpeta. ¡Prueba en otra!");
+                }
+            });
+        });
+
+        function checkWinCondition() {
+            const filesPanel = document.getElementById('files-container');
+            // Si ya no quedan archivos en el panel de origen
+            if (filesPanel.querySelectorAll('.file-item').length === 0) {
+                document.getElementById('successMsg').style.display = 'block';
+            }
+        }
+
+        function resetGame() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>

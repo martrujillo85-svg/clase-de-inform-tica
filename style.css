@@ -6,19 +6,21 @@
     padding: 0;
     box-sizing: border-box;
     /* Aplicamos Outfit como tipografía principal */
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Fredoka', sans-serif;
+    font-variation-settings:
+    "wdth" 400;
 }
 
 body {
     min-height: 100vh;
     /* Capa de color morado/azul semi-transparente (0.6) sobre la imagen de fondo */
-    background: linear-gradient(rgba(15, 5, 29, 0.6), rgba(15, 5, 29, 0.6)), 
-                url('img/fondo.png') no-repeat center center fixed;
+    background: url('img/fondos.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #ffffff;
+    color: #424244;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Inter', sans-serif;font-family: 'Inter', sans-serif;
 }
 
 /* Helper para ocultar vistas inactivas */
@@ -31,7 +33,6 @@ body {
    ========================================================================== */
 .main-header {
     width: 100%;
-    background: rgba(15, 5, 29, 0.75);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -46,8 +47,8 @@ body {
 }
 
 .logo-container h1 {
-    font-size: 1.5rem;
-    color: #ffffff;
+    font-size: 3rem;
+    color: #2b0854;
     font-weight: 700;
 }
 
@@ -59,7 +60,7 @@ body {
 }
 
 .nav-link {
-    color: #e0e0e0;
+    color: #28242c;
     text-decoration: none;
     font-weight: 600;
     padding: 8px 16px;
@@ -68,8 +69,8 @@ body {
 }
 
 .nav-link:hover, .nav-link.active {
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    background: rgba(230, 209, 209, 0.2);
+    color: #747177;
 }
 
 /* MENÚ DESPLEGABLE "ACTIVIDADES" */
@@ -83,7 +84,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(173, 217, 247, 0.582);
     backdrop-filter: blur(10px);
     min-width: 180px;
     max-height: 300px;
@@ -118,7 +119,7 @@ body {
    ========================================================================== */
 .content-container {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
@@ -130,7 +131,7 @@ body {
 }
 
 .hero-card {
-    background: rgba(255, 255, 255, 0.70);
+    /*background: rgba(94, 196, 243, 0.7);*/
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 20px;
@@ -138,24 +139,25 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     padding: 35px;
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 1400px;
     text-align: center;
     color: #2b0854;
 }
 
 .hero-card h2 {
-    font-size: 1.8rem;
+    font-size: 3rem;
     margin-bottom: 10px;
 }
 
 .hero-card p {
     font-size: 1.05rem;
     margin-bottom: 15px;
+    color:#28242c;
 }
 
 .hero-img-container {
     width: 100%;
-    max-width: 450px;
+    max-width: 800px;
     margin: 15px auto;
 }
 
@@ -201,14 +203,15 @@ body {
 }
 
 .feature-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin-bottom: 10px;
     color: #ffffff;
+    text-shadow: 2px 4px 10px rgba(36, 35, 35, 0.15);
 }
 
 .feature-card p {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: #424244;
     margin: 0;
 }
 

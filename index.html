@@ -7,7 +7,7 @@
     <!-- FUENTE MODERNA (Poppins) DESDE GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +15,9 @@
     <!-- 1. BARRA DE NAVEGACIÓN PRINCIPAL (HEADER PERMANENTE) -->
     <header class="main-header">
         <div class="logo-container" onclick="showSection('home')" style="cursor: pointer;">
-            <h1>💻 Cuarto Informática</h1>
+            <h1>🌟 Cuarto Informática</h1>
+           <span>AULA ABIERTA • CURSO 2026</span> 
+           
         </div>
         <nav class="nav-menu">
             <ul>
@@ -23,7 +25,7 @@
                 
                 <!-- MENÚ DESPLEGABLE "ACTIVIDADES" -->
                 <li class="dropdown">
-                    <a href="#" class="nav-link">ACTIVIDADES ▾</a>
+                    <a href="#" class="nav-link">Actividades ▾</a>
                     <div class="dropdown-content">
                         <a href="#" onclick="showWeek(1)">Semana 1</a>
                         <a href="#" onclick="showWeek(2)">Semana 2</a>
@@ -49,8 +51,12 @@
         <section id="home" class="main-section">
             
             <!-- TARJETA PRINCIPAL DE BIENVENIDA -->
+             
+                <div class="status-badge-open" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.12); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; margin-bottom: 20px; border: 1px solid rgba(59, 45, 45, 0.2);">
+                    AULA ABIERTA <span style="width: 10px; height: 10px; background-color: #2ecc71; border-radius: 50%; box-shadow: 0 0 8px #2ecc71; display: inline-block;"></span> CURSO 2026
+                </div>
             <div class="hero-card">
-                <h2>¡Bienvenidos a Cuarto Informática!</h2>
+                <h2>¡Bienvenidos a Informática!</h2>
                 <p>Explora nuestras actividades semanales, juegos e infografías.</p>
                 
                 <!-- Imagen Central del Inicio -->
@@ -58,7 +64,7 @@
                     <img src="img/sep.jpg" alt="Informática Educativa" class="hero-img">
                 </div>
 
-                <p style="font-weight: bold; color: #46178f; margin-top: 15px;">
+                <p style="font-weight: bold; color: #434146; margin-top: 15px;">
                     Selecciona una opción del menú superior o en los módulos de abajo para comenzar.
                 </p>
             </div>
