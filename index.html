@@ -61,7 +61,7 @@
                 
                 <!-- Imagen Central del Inicio -->
                 <div class="hero-img-container">
-                    <img src="img/sep.jpg" alt="Informática Educativa" class="hero-img">
+                    <img src="img/octu.png" alt="Informática Educativa" class="hero-img">
                 </div>
 
                 <p style="font-weight: bold; color: #434146; margin-top: 15px;">
@@ -165,7 +165,7 @@
 <!-- SECCIÓN INFOGRAFÍAS Y PRESENTACIONES -->
 <section id="infografias" class="main-section hidden">
     <div class="hero-card">
-        <h2>📊 Infografías y Presentaciones</h2>
+        <h2>📊 Infografías, Presentaciones y Videos</h2>
         <p>Selecciona una presentación o infografía para explorarla en detalle.</p>
 
         <!-- Cuadrícula de tarjetas de infografías -->
@@ -179,8 +179,22 @@
                 <h3>🧘 Ergonomía Informática</h3>
                 <p>Video y consejos sobre posturas saludables frente al equipo.</p>
             </div>
-        </div>
 
+            <div class="feature-card card-green" onclick="showInfografia('carpetas')" style="cursor: pointer;">
+                <h3>📁 Carpetas y Archivos</h3>
+                <p>Organización de Archivos y Carpetas en Windows</p>
+            </div>
+        
+            <div class="feature-card card-yellow" onclick="showInfografia('escritorio')" style="cursor: pointer;">
+                <h3>📟 Escritorio</h3>
+                <p>Partes del Escritorio</p>
+            </div>
+            
+            <div class="feature-card card-orange" onclick="showInfografia('teclado')" style="cursor: pointer;">
+                <h3>⌨ Teclado</h3>
+                <p>Partes del teclado</p>
+            </div>
+        </div>
         <!-- Botón para regresar al catálogo (oculto por defecto) -->
         <button id="btn-volver-infografias" class="nav-link hidden" onclick="cerrarInfografia()" style="margin-bottom: 20px; background: #46178f; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
             ← Volver al catálogo de infografías

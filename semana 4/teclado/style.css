@@ -1,0 +1,141 @@
+/* =========================================
+   1. RESET BÁSICO Y CONTENEDOR PRINCIPAL
+   ========================================= */
+* { 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    background: #f0f4f8; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    padding: 20px; 
+}
+
+/* Tarjeta principal con límite de desbordamiento (Evita barras horizontales) */
+.activity-card { 
+    background: white; 
+    width: 100%; 
+    max-width: 850px; 
+    padding: 20px; 
+    border-radius: 16px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+    text-align: center; 
+    overflow: hidden; /* Corta cualquier imagen o elemento que intente salirse */
+}
+
+/* =========================================
+   2. PANEL SUPERIOR DE MISIONES (HEADER)
+   ========================================= */
+.game-header { 
+    background: #f8f9fa; 
+    padding: 15px; 
+    border-radius: 12px; 
+    margin-bottom: 20px; 
+    border: 2px dashed #cbd5e1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.game-header h2 { 
+    color: #46178f; 
+    margin-bottom: 5px; 
+}
+
+.score-container { 
+    font-size: 1.2rem; 
+    color: #334155; 
+    font-weight: bold; 
+}
+
+.mission-box { 
+    background: #ffb900; 
+    color: #222; 
+    padding: 10px 20px; 
+    border-radius: 12px; 
+    font-size: 1.1rem; 
+    width: 100%; 
+    max-width: 500px; 
+}
+
+.target-highlight { 
+    font-size: 1.4rem; 
+    color: #000; 
+    display: block; 
+    margin-top: 5px; 
+}
+
+/* =========================================
+   3. CONTENEDOR DE LA IMAGEN DEL TECLADO
+   ========================================= */
+.interactive-map-container {
+    position: relative;
+    width: 100%;
+    margin: 15px auto 0 auto;
+    display: block;
+}
+
+/* Imagen fluida que respeta estrictamente el tamaño de la tarjeta */
+.map-image {
+    width: 100%;
+    max-width: 100%; 
+    height: auto; /* Mantiene la proporción sin aplastar el teclado */
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   4. HITBOXES (ÁREAS DE CLIC INVISIBLES)
+   ========================================= */
+.hitbox {
+    position: absolute;
+    background: transparent; /* Fondo completamente transparente */
+    border: none;            /* Sin bordes */
+    outline: none;           /* Sin contorno de enfoque */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hitbox:hover {
+    background: rgba(52, 152, 219, 0.6);
+}
+
+/* Efectos visuales al acertar o fallar */
+.hitbox.correct-zone {
+    background: rgba(46, 204, 113, 0.6);
+    border-color: #2ecc71;
+    pointer-events: none; /* Desactiva el clic en esa zona una vez adivinada */
+}
+
+.hitbox.wrong-zone {
+    background: rgba(231, 76, 60, 0.6);
+    border-color: #e74c3c;
+    animation: shake 0.3s;
+}
+
+/* =========================================
+   5. FEEDBACK Y ANIMACIONES
+   ========================================= */
+.feedback-msg { 
+    margin-top: 20px; 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+    min-height: 40px; 
+    padding: 10px; 
+    border-radius: 8px; 
+}
+
+/* Animación de vibración para cuando se equivocan */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}

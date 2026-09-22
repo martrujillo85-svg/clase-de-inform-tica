@@ -47,7 +47,7 @@ body {
 }
 
 .logo-container h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #2b0854;
     font-weight: 700;
 }
@@ -221,11 +221,23 @@ body {
 }
 
 .card-red {
-    background: rgba(226, 27, 60, 0.45);  /* Rojo translúcido */
+    background: rgba(243, 4, 44, 0.45);  /* Rojo translúcido */
 }
 
 .card-green {
-    background: rgba(38, 137, 12, 0.45);  /* Verde translúcido */
+    background: rgba(68, 243, 24, 0.45);  /* Verde translúcido */
+}
+.card-yellow {
+    background: rgba(240, 236, 4, 0.45);  /* Amarillo translúcido */
+}
+.card-orange {
+    background: rgba(250, 114, 3, 0.699);  /* Naranja translúcido */
+}
+.card-purple {
+    background: rgba(126, 3, 226, 0.45);  /* Morado translúcido */
+}
+.card-brown {
+    background: rgba(77, 45, 3, 0.45);  /* Café translúcido */
 }
 
 /* ==========================================================================
@@ -306,7 +318,7 @@ body {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-}
+} 
 
 .genially-container iframe {
     position: absolute;
@@ -315,6 +327,24 @@ body {
     width: 100%;
     height: 100%;
     border: none;
+}
+/* Ajuste crítico para el grid de infografías y tarjetas */
+#grid-infografias, 
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+/* Asegurar que las tarjetas dentro del grid no fuercen desbordamiento */
+.features-grid .feature-card {
+    width: 100%;
+    min-width: 0; /* Previene desbordamiento en grid con textos largos */
+    box-sizing: border-box;
 }
 /* Cuadrícula de tarjetas de juegos */
 .games-grid {

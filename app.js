@@ -26,9 +26,12 @@ const contenidoSemanas = {
     ]
     },
     4: {
-        titulo: "Semana 4: Repaso General",
-        descripcion: "Próximamente más contenidos y dinámicas.",
-        actividades: []
+        titulo: "Semana 4: Teclado",
+        descripcion: "Conoce las partes del teclado y teclas especiales",
+        actividades: [
+           { id: 1, nombre: "⌨ Actividad 1: Teclado" },
+           { id: 2, nombre: "📍Actividad 2: Teclas Especiales" }
+        ]
     }
 };
 
@@ -230,6 +233,27 @@ function loadActivity(weekNumber, activityId) {
                 <iframe src="semana 3/escritorio/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
             </div>
         `;
+    }  else if (weekNumber === 3 && activityId === 2) {
+        // Semana 3 - Actividad 2: Escritorio
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 3/escritorio/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+            </div>
+        `;
+    } else if (weekNumber === 4 && activityId === 1) {
+        // Semana 4 - Actividad 1: Teclado
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 4/teclado/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+            </div>
+        `;
+    }else if (weekNumber === 4 && activityId === 2) {
+        // Semana 4 - Actividad 2: Teclado
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 4/especiales/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+            </div>
+        `;
     }
 }
 
@@ -295,6 +319,36 @@ function showInfografia(tipo) {
                 <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🧘 Ergonomía al Usar la Computadora</h3>
                 <video controls class="hero-img" style="width: 100%; border-radius: 12px;">
                     <source src="infografia/ergonomia.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </div>
+        `;
+    } else if (tipo === 'carpetas') {
+        pantalla.innerHTML = `
+            <div class="info-block">
+                <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">📁 Carpetas y Archivos</h3>
+                <video controls class="hero-img" style="width: 100%; border-radius: 12px;">
+                    <source src="infografia/carpetas.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </div>
+        `;
+    } else if (tipo === 'escritorio') {
+        pantalla.innerHTML = `
+            <div class="info-block">
+                <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">📟 Partes del Escritorio</h3>
+                <video controls class="hero-img" style="width: 100%; border-radius: 12px;">
+                    <source src="infografia/escritorio.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </div>
+        `;
+    } else if (tipo === 'teclado') {
+        pantalla.innerHTML = `
+            <div class="info-block">
+                <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">⌨ Partes del Teclado</h3>
+                <video controls class="hero-img" style="width: 100%; border-radius: 12px;">
+                    <source src="infografia/teclado.mp4" type="video/mp4">
                     Tu navegador no soporta la reproducción de videos.
                 </video>
             </div>

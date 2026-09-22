@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Teclado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="activity-card">
+        <!-- Panel superior de misiones y puntuación -->
+        <header class="game-header">
+            <h2>⌨️ Reto: Partes del Teclado</h2>
+            <div class="score-container">Puntos: <strong id="score">0</strong></div>
+            <div class="mission-box">
+                Misión: Encuentra y haz clic en... <br>
+                <strong id="target-name" class="target-highlight">Cargando...</strong>
+            </div>
+        </header>
+
+        <!-- ÁREA DEL MAPA INTERACTIVO -->
+        <div class="interactive-map-container" id="keyboard-grid">
+            <!-- Imagen de fondo de tu teclado (Verifica que esté en tu carpeta img principal) -->
+            <img src="/img/teclado.png" alt="Teclado" class="map-image">
+            
+            <!-- Hitboxes con los nuevos IDs (ajusta los % top/left/width/height según tu imagen real) -->
+            <button class="hitbox" data-id="escape" style="top: 10%; left: 3%; width: 5%; height: 10%;" onclick="checkZone('escape')"></button>
+            <button class="hitbox" data-id="funcion" style="top: 10%; left: 10%; width: 55%; height: 10%;" onclick="checkZone('funcion')"></button>
+            
+            <button class="hitbox" data-id="tabulador" style="top: 45%; left: 3%; width: 7%; height: 10%;" onclick="checkZone('tabulador')"></button>
+            <button class="hitbox" data-id="bloqmayus" style="top: 55%; left: 3%; width: 7%; height: 10%;" onclick="checkZone('bloqmayus')"></button>
+            
+            <button class="hitbox" data-id="alfanumerico" style="top: 45%; left: 10%; width: 45%; height: 30%;" onclick="checkZone('alfanumerico')"></button>
+            <button class="hitbox" data-id="backspace" style="top: 32%; left: 55%; width: 10%; height: 10%;" onclick="checkZone('backspace')"></button>
+            <button class="hitbox" data-id="enter" style="top: 55%; left: 55%; width: 8% ; height: 12%;" onclick="checkZone('enter')"></button>
+            
+            <button class="hitbox" data-id="windows" style="top: 79%; left: 10%; width: 5%; height: 10%;" onclick="checkZone('windows')"></button>
+            <button class="hitbox" data-id="space" style="top: 79%; left: 20%; width: 23%; height: 10%;" onclick="checkZone('space')"></button>
+            
+            <button class="hitbox" data-id="navegacion" style="top: 65%; left: 67%; width: 10%; height: 25%;" onclick="checkZone('navegacion')"></button>
+            <button class="hitbox" data-id="numerico" style="top: 33%; left: 79%; width: 18% ; height: 53%;" onclick="checkZone('numerico')"></button>
+        </div>
+
+        <!-- Área de mensajes de acierto o error -->
+        <div id="feedback-msg" class="feedback-msg">¡Prepárate para jugar!</div>
+    </div>
+
+    <!-- Enlace a la lógica del juego -->
+    <script src="script.js"></script>
+</body>
+</html>
