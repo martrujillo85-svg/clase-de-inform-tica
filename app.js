@@ -272,7 +272,7 @@ function loadPixelGame() {
     container.innerHTML = `
         <div style="position: relative; width: 100%; max-width: 1050px; height: 720px; margin: 0 auto;">
             <button onclick="closePixelGame()" style="position: absolute; top: 10px; right: 10px; z-index: 10; background: #dc2626; color: white; border: none; padding: 10px 18px; border-radius: 8px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">❌ Cerrar Juego</button>
-            <iframe src="/juego/pixel/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" title="Creador Pixel Art"></iframe>
+            <iframe src="juego/pixel/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" title="Creador Pixel Art"></iframe>
         </div>
     `;
 }
