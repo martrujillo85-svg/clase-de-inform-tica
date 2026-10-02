@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.quiz-container {
+    width: 100%;
+    max-width: 750px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 35px 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.oculto {
+    display: none !important;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0284c7;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #2d3748;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+h2 {
+    color: #2d3748;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    color: #64748b;
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+}
+
+.btn-principal {
+    background-color: #a855f7;
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 0 #7e22ce, 0 12px 20px rgba(168, 85, 247, 0.3);
+    transition: all 0.15s ease;
+}
+
+.btn-principal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 0 #7e22ce, 0 14px 22px rgba(168, 85, 247, 0.4);
+}
+
+.btn-principal:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #7e22ce;
+}
+
+/* Header de estado */
+.header-juego {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.chip {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+}
+
+.chip-puntos {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+/* Barra de Tiempo */
+.barra-tiempo-contenedor {
+    width: 100%;
+    height: 12px;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.barra-tiempo-progreso {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #38ef7d, #11998e);
+    border-radius: 10px;
+    transition: width 0.1s linear;
+}
+
+/* Opciones Tipo Kahoot con colores claros y vivos */
+.opciones-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.opcion-btn {
+    border: none;
+    border-radius: 16px;
+    padding: 18px 15px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.3s ease;
+    min-height: 80px;
+}
+
+.opcion-btn:hover {
+    transform: translateY(-3px);
+}
+
+.opcion-btn:active {
+    transform: translateY(2px);
+}
+
+.figura {
+    font-size: 1.3rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.opcion-roja {
+    background-color: #ff5964;
+    box-shadow: 0 6px 0 #d63031;
+}
+
+.opcion-azul {
+    background-color: #35a7ff;
+    box-shadow: 0 6px 0 #0984e3;
+}
+
+.opcion-amarilla {
+    background-color: #ffc107;
+    box-shadow: 0 6px 0 #d99b00;
+    color: #333;
+}
+
+.opcion-amarilla .figura {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.opcion-verde {
+    background-color: #2ed573;
+    box-shadow: 0 6px 0 #26af5f;
+}
+
+/* Retroalimentación visual */
+.opcion-btn.correcta {
+    background-color: #2ed573 !important;
+    box-shadow: 0 6px 0 #26af5f !important;
+    color: white !important;
+    animation: pulse 0.4s ease;
+}
+
+.opcion-btn.incorrecta {
+    background-color: #ff4757 !important;
+    box-shadow: 0 6px 0 #c0392b !important;
+    opacity: 0.5;
+}
+
+.opcion-btn.desactivada {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.opcion-btn.desactivada.correcta {
+    opacity: 1;
+}
+
+.btn-siguiente {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.btn-siguiente:hover {
+    background-color: #1d4ed8;
+}
+
+.score-box {
+    background-color: #f0fdf4;
+    border: 3px solid #86efac;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#puntaje-final {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #16a34a;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+    .opciones-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Ajuste de proporciones para columna de imágenes y textos */
+.column#col-partes {
+    width: 35%;
+}
+
+.column#col-funciones {
+    width: 60%;
+}
+
+/* Estilos de las imágenes dentro de las casillas */
+.item img {
+    max-width: 100%;
+    max-height: 65px;
+    object-fit: contain;
+    pointer-events: none; /* Permite que el clic lo reciba directamente la casilla */
+}

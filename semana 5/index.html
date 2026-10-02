@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahoot! - Partes de la Ventana de Windows</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+        <!-- Pantalla de Inicio -->
+        <div id="pantalla-inicio" class="card">
+            <div class="badge">💻 Informática Divertida</div>
+            <h1>¿Conoces la Ventana de Windows?</h1>
+            <p>Responde correctamente cada pregunta antes de que se agote el tiempo para ganar el máximo de puntos.</p>
+            <button id="btn-inicio" class="btn-principal">¡Empezar Juego! 🚀</button>
+        </div>
+
+        <!-- Pantalla de Juego -->
+        <div id="pantalla-juego" class="card oculto">
+            <div class="header-juego">
+                <span id="contador-pregunta" class="chip">Pregunta 1/6</span>
+                <span id="puntuacion" class="chip chip-puntos">⭐ 0 pts</span>
+            </div>
+
+            <!-- Barra de tiempo animada -->
+            <div class="barra-tiempo-contenedor">
+                <div id="barra-tiempo" class="barra-tiempo-progreso"></div>
+            </div>
+
+            <!-- Enunciado de la Pregunta -->
+            <h2 id="texto-pregunta">Cargando pregunta...</h2>
+
+            <!-- Botones de Respuestas Tipo Kahoot -->
+            <div class="opciones-grid">
+                <button class="opcion-btn opcion-roja" data-index="0">
+                    <span class="figura">▲</span>
+                    <span class="texto-opcion">Opción 1</span>
+                </button>
+                <button class="opcion-btn opcion-azul" data-index="1">
+                    <span class="figura">◆</span>
+                    <span class="texto-opcion">Opción 2</span>
+                </button>
+                <button class="opcion-btn opcion-amarilla" data-index="2">
+                    <span class="figura">●</span>
+                    <span class="texto-opcion">Opción 3</span>
+                </button>
+                <button class="opcion-btn opcion-verde" data-index="3">
+                    <span class="figura">■</span>
+                    <span class="texto-opcion">Opción 4</span>
+                </button>
+            </div>
+
+            <button id="btn-siguiente" class="btn-siguiente oculto">Siguiente Pregunta ➔</button>
+        </div>
+
+        <!-- Pantalla de Resultados Finales -->
+        <div id="pantalla-resultados" class="card oculto">
+            <div class="badge">🎉 ¡Juego Completado!</div>
+            <h2>Resultados Finales</h2>
+            <div class="score-box">
+                <p id="puntaje-final">0</p>
+                <span>PUNTOS TOTALES</span>
+            </div>
+            <p id="mensaje-retroalimentacion">¡Excelente trabajo!</p>
+            <button id="btn-reiniciar" class="btn-principal">Jugar de Nuevo 🔄</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
