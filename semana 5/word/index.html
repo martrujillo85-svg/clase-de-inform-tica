@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kahoot! - Partes de la Ventana de Windows</title>
+    <title>Partes de la Ventana</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,28 +11,31 @@
     <div class="quiz-container">
         <!-- Pantalla de Inicio -->
         <div id="pantalla-inicio" class="card">
-            <div class="badge">💻 Informática Divertida</div>
-            <h1>¿Conoces la Ventana de Windows?</h1>
-            <p>Responde correctamente cada pregunta antes de que se agote el tiempo para ganar el máximo de puntos.</p>
+            <div class="badge">💻</div>
+            <h1>¿Reconoces las partes de la ventana?</h1>
+            <p>Observa la imagen y selecciona la opción correcta antes de que el tiempo se agote.</p>
             <button id="btn-inicio" class="btn-principal">¡Empezar Juego! 🚀</button>
         </div>
 
         <!-- Pantalla de Juego -->
         <div id="pantalla-juego" class="card oculto">
             <div class="header-juego">
-                <span id="contador-pregunta" class="chip">Pregunta 1/6</span>
+                <span id="contador-pregunta" class="chip">Pregunta 1/10</span>
                 <span id="puntuacion" class="chip chip-puntos">⭐ 0 pts</span>
             </div>
 
-            <!-- Barra de tiempo animada -->
+            <!-- Barra de tiempo -->
             <div class="barra-tiempo-contenedor">
                 <div id="barra-tiempo" class="barra-tiempo-progreso"></div>
             </div>
 
-            <!-- Enunciado de la Pregunta -->
+            <!-- Pregunta e Imagen Principal -->
             <h2 id="texto-pregunta">Cargando pregunta...</h2>
+            <div class="contenedor-imagen">
+                <img id="imagen-pregunta" src="" alt="Imagen de la pregunta" class="imagen-pregunta">
+            </div>
 
-            <!-- Botones de Respuestas Tipo Kahoot -->
+            <!-- Botones de Respuestas -->
             <div class="opciones-grid">
                 <button class="opcion-btn opcion-roja" data-index="0">
                     <span class="figura">▲</span>
@@ -55,16 +58,16 @@
             <button id="btn-siguiente" class="btn-siguiente oculto">Siguiente Pregunta ➔</button>
         </div>
 
-        <!-- Pantalla de Resultados Finales -->
+        <!-- Pantalla de Resultados -->
         <div id="pantalla-resultados" class="card oculto">
-            <div class="badge">🎉 ¡Juego Completado!</div>
-            <h2>Resultados Finales</h2>
+            <div class="badge">🎉 ¡Fin del Juego!</div>
+            <h2>Resultado Final</h2>
             <div class="score-box">
                 <p id="puntaje-final">0</p>
                 <span>PUNTOS TOTALES</span>
             </div>
-            <p id="mensaje-retroalimentacion">¡Excelente trabajo!</p>
-            <button id="btn-reiniciar" class="btn-principal">Jugar de Nuevo 🔄</button>
+            <p id="mensaje-retroalimentacion">¡Buen trabajo!</p>
+            <button id="btn-reiniciar" class="btn-principal">Volver a Jugar 🔄</button>
         </div>
     </div>
 

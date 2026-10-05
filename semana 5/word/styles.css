@@ -15,7 +15,24 @@ body {
     align-items: center;
     padding: 20px;
 }
+.contenedor-imagen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 20px 0;
+    overflow: hidden;
+}
 
+.imagen-pregunta {
+    max-width: 100%;
+    max-height: 140px;  /* Disminuye este número si la imagen sigue viéndose muy grande */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+}
 .quiz-container {
     width: 100%;
     max-width: 750px;

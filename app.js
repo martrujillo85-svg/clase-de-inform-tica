@@ -23,7 +23,8 @@ const contenidoSemanas = {
     actividades: [
         { id: 1, nombre: "📁 Actividad 1: Organizador de Archivos" },
         { id: 2, nombre: "📁 Actividad 2: Escritorio" }
-    ]
+        
+        ]
     },
     4: {
         titulo: "Semana 4: Teclado",
@@ -31,6 +32,14 @@ const contenidoSemanas = {
         actividades: [
            { id: 1, nombre: "⌨ Actividad 1: Teclado" },
            { id: 2, nombre: "📍Actividad 2: Teclas Especiales" }
+        ]
+    },
+    5: {
+        titulo: "Semana 5: Word",
+        descripcion: "Conoce un procesador de textos",
+        actividades: [
+           { id: 1, nombre: " 📄 Actividad 1: Ventana de Word" },
+           { id: 2, nombre: "🛠 Actividad 2: Herramientas de Formato" }
         ]
     }
 };
@@ -255,6 +264,22 @@ function loadActivity(weekNumber, activityId) {
             </div>
         `;
     }
+    else if (weekNumber === 5 && activityId === 1) {
+        // Semana 5 - Actividad 1: Ventana de Word
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 5/word/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+            </div>
+        `;
+    }
+    else if (weekNumber === 5 && activityId === 2) {
+        // Semana 5 - Actividad 2: Herramientas
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 5/formato/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+            </div>
+        `;
+    }
 }
 
 // Función para cargar el Creador Pixel Art
@@ -354,6 +379,26 @@ function showInfografia(tipo) {
             </div>
         `;
     }
+    else if (tipo === 'word') {
+        pantalla.innerHTML = `
+            <div class="info-block">
+                <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">⌨ Partes del Teclado</h3>
+                <video controls class="hero-img" style="width: 100%; border-radius: 12px;">
+                    <source src="infografia/word.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </div>
+        `;
+    } else if (tipo === 'imagen_word') {
+    pantalla.innerHTML = `
+        <div class="info-block">
+            <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🖼️ Infografía: Ventana de Word</h3>
+            <img src="infografia/ventanaword.jpg" alt="Infografía Ventana de Word" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="infografia/atajos.jpg" alt="Infografía Ventana de Word" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            </div>
+    `;
+}
+   
 }
 
 function cerrarInfografia() {

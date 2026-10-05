@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorama de Herramientas de Word</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor-juego">
+        <div class="cabecera-juego">
+            <h1>Memorama: Herramientas de Word</h1>
+            <p>Encuentra el par correcto: une el icono con su nombre.</p>
+            <div class="estadisticas">
+                <span class="chip chip-movimientos">Movimientos: <span id="movimientos">0</span></span>
+                <span class="chip chip-pares">Pares encontrados: <span id="pares-encontrados">0</span>/8</span>
+            </div>
+            <button id="btn-reiniciar" class="btn-principal">Reiniciar Juego 🔄</button>
+        </div>
+
+        <!-- El tablero donde se generarán las cartas con JavaScript -->
+        <div class="tablero-memorama" id="tablero-memorama">
+            <!-- Las cartas se inyectan aquí -->
+        </div>
+
+        <!-- Mensaje de victoria (oculto por defecto) -->
+        <div id="mensaje-victoria" class="mensaje-victoria oculto">
+            <h2>¡Felicidades! 🎉</h2>
+            <p>Has encontrado todas las herramientas de Word.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
