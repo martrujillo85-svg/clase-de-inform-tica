@@ -217,27 +217,27 @@ body {
 
 /* Colores de fondo semi-transparentes para cada tarjeta */
 .card-blue {
-    background: rgba(0, 180, 216, 0.45); /* Azul translúcido */
+    background: rgba(10, 211, 252, 0.651); /* Azul translúcido */
 }
 
 .card-red {
-    background: rgba(243, 4, 44, 0.45);  /* Rojo translúcido */
+    background: rgba(247, 8, 47, 0.685);  /* Rojo translúcido */
 }
 
 .card-green {
-    background: rgba(68, 243, 24, 0.45);  /* Verde translúcido */
+    background: rgba(67, 252, 21, 0.589);  /* Verde translúcido */
 }
 .card-yellow {
-    background: rgba(240, 236, 4, 0.45);  /* Amarillo translúcido */
+    background: rgba(240, 236, 1, 0.616);  /* Amarillo translúcido */
 }
 .card-orange {
-    background: rgba(250, 114, 3, 0.699);  /* Naranja translúcido */
+    background: rgba(241, 116, 13, 0.87);  /* Naranja translúcido */
 }
 .card-purple {
-    background: rgba(126, 3, 226, 0.45);  /* Morado translúcido */
+    background: rgba(126, 3, 226, 0.548);  /* Morado translúcido */
 }
-.card-brown {
-    background: rgba(77, 45, 3, 0.45);  /* Café translúcido */
+.card-pink {
+    background: rgba(236, 8, 179, 0.466);  /* Café translúcido */
 }
 
 /* ==========================================================================

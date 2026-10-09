@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de Formato de Texto - Word</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor-practica">
+        <header class="cabecera">
+            <span class="badge">📝 Desafío de Procesador de Textos</span>
+            <h1>Práctica de Formato en Word</h1>
+            <p>Copia el siguiente texto en Word y aplica el formato que se te indica en las instrucciones.</p>
+        </header>
+
+        <div class="panel-practica">
+            <!-- Columna 1: Texto a Copiar -->
+            <div class="caja-panel">
+                <h3>📄 Texto Base (Sin formato)</h3>
+                <div class="texto-copiar" id="texto-base">
+¿Qué es Microsoft Word?
+Microsoft Word es como un cuaderno mágico dentro de la computadora. En lugar de usar lápiz y papel, usas el teclado y la pantalla para escribir todo lo que te imagines: cuentos, tareas de la escuela, cartas, ¡y hasta tu propio libro!
+¿Para qué sirve Word?
+Con Word puedes hacer muchas cosas divertidas y organizar tus trabajos escolares:
+Escribir cuentos e historias: Crea aventuras fantásticas e invéntate personajes.
+Hacer tareas y reportes: Presenta trabajos limpios, ordenados y con fotos.
+Agregar imágenes y dibujos: Ponle color, tablas, formas y fotos a tus hojas.
+Corregir la ortografía: Si te equivocas, en una palabra, Word te avisa para que la arregles.
+
+                </div>
+                <button class="btn-copiar" onclick="copiarTexto()">📋 Copiar Texto</button>
+            </div>
+
+            <!-- Columna 2: Lista de Instrucciones -->
+            <div class="caja-panel">
+                <h3>🎨 Instrucciones de Formato</h3>
+                <ul class="lista-instrucciones">
+                    <li><span class="paso">1</span> <strong>Título:</strong> Fuente Calibri, tamaño 22, color Azul, Negrita y Centrado.</li>
+                    <li><span class="paso">2</span> <strong>Cuerpo del texto:</strong> Fuente Calibri , tamaño 16, color negro y alineación Justificado.</li>
+                    <li><span class="paso">3</span> <strong>Viñetas:</strong> Agrega viñetas y cambia su color</li>
+                    <li><span class="paso">4</span> <strong>Resaltado</strong> Selecciona palabras clave y subraya</li>
+                    <li><span class="paso">5</span> <strong>Guardar:</strong> Guarda tu archivo con el nombre <code>Formato_TuNombre.docx</code>. En tu carpeta de la nube</li>
+                </ul>
+            </div>
+        </div>
+
+       
+    <script src="script.js"></script>
+</body>
+</html>

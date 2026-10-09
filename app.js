@@ -41,6 +41,13 @@ const contenidoSemanas = {
            { id: 1, nombre: " 📄 Actividad 1: Ventana de Word" },
            { id: 2, nombre: "🛠 Actividad 2: Herramientas de Formato" }
         ]
+    },
+    6: {
+        titulo: "Semana 6: Formato Word",
+        descripcion: "Herramientas de Formato",
+        actividades: [
+           { id: 1, nombre: " 📄 Deafío de Word" },
+         ]
     }
 };
 
@@ -280,6 +287,14 @@ function loadActivity(weekNumber, activityId) {
             </div>
         `;
     }
+     else if (weekNumber === 6 && activityId === 1) {
+        // Semana 6 - Actividad 1: Formato en Word
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 6/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+            </div>
+        `;
+    }
 }
 
 // Función para cargar el Creador Pixel Art
@@ -302,7 +317,7 @@ function loadPixelGame() {
     `;
 }
 
-// Función para cerrar el juego y restaurar el menú de juegos
+//Función para cerrar el juego y restaurar el menú de juegos
 function closePixelGame() {
     const container = document.getElementById('pixel-game-container');
     if (container) {
@@ -315,6 +330,27 @@ function closePixelGame() {
         gamesGrid.style.display = 'grid';
     }
 }
+
+// Función para cargar Mecanografía
+function loadMecanografia() {
+    // 1. Ocultar la cuadrícula de tarjetas de juegos para ganar espacio libre
+    const gamesGrid = document.querySelector('.games-grid');
+    if (gamesGrid) {
+        gamesGrid.style.display = 'none';
+    }
+
+    const container = document.getElementById('pixel-game-container');
+    if (!container) return;
+
+    // 2. Renderizar el iframe del Pixel Art aprovechando toda la pantalla
+    container.innerHTML = `
+        <div style="position: relative; width: 100%; max-width: 1050px; height: 720px; margin: 0 auto;">
+            <button onclick="closePixelGame()" style="position: absolute; top: 10px; right: 10px; z-index: 10; background: #dc2626; color: white; border: none; padding: 10px 18px; border-radius: 8px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">❌ Cerrar Juego</button>
+            <iframe src="juego/typing/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" title="Creador Pixel Art"></iframe>
+        </div>
+    `;
+}
+
 function showInfografia(tipo) {
     const grid = document.getElementById('grid-infografias');
     const pantalla = document.getElementById('infografia-pantalla');
@@ -395,6 +431,13 @@ function showInfografia(tipo) {
             <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🖼️ Infografía: Ventana de Word</h3>
             <img src="infografia/ventanaword.jpg" alt="Infografía Ventana de Word" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             <img src="infografia/atajos.jpg" alt="Infografía Ventana de Word" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            </div>
+    `;
+} else if (tipo === 'carta') {
+    pantalla.innerHTML = `
+        <div class="info-block">
+            <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🖼️ Infografía: Ventana de Word</h3>
+            <img src="infografia/carta.jpg" alt="Infografía Ventana de Word" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             </div>
     `;
 }

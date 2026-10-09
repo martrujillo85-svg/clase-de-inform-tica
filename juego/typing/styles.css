@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Source+Code+Pro:wght@500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+.contenedor-juego {
+    max-width: 950px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 25px 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 4px solid #818cf8;
+}
+
+.cabecera h1 {
+    color: #3730a3;
+    font-size: 2rem;
+    margin: 6px 0;
+}
+
+.cabecera p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #4338ca;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* MÉTRICAS */
+.panel-metricas {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    padding: 8px 16px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.chip-tiempo { background-color: #f0fdf4; color: #16a34a; border: 2px solid #bbf7d0; }
+.chip-pdm { background-color: #fef3c7; color: #d97706; border: 2px solid #fde68a; }
+.chip-precision { background-color: #e0f2fe; color: #0284c7; border: 2px solid #bae6fd; }
+.chip-progreso { background-color: #fae8ff; color: #a21caf; border: 2px solid #f5d0fe; }
+
+/* VISOR DE PÁRRAFOS */
+/* Ajuste para la caja de texto de lectura continua */
+.caja-texto {
+    background-color: #f8fafc;
+    border: 3px solid #cbd5e1;
+    border-radius: 16px;
+    padding: 20px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: left;
+    margin-bottom: 20px;
+    max-height: 200px; /* Altura ideal de lectura */
+    overflow-y: auto;   /* Scroll automático conforme el alumno escribe */
+    word-break: break-word;
+    user-select: none;
+}
+
+.caracter {
+    position: relative;
+    color: #64748b;
+}
+
+.caracter.correcto {
+    color: #16a34a;
+    background-color: #dcfce7;
+    border-radius: 3px;
+}
+
+.caracter.incorrecto {
+    color: #dc2626;
+    background-color: #fee2e2;
+    border-radius: 3px;
+    text-decoration: underline;
+}
+
+.caracter.actual {
+    color: #1e1b4b;
+    background-color: #c7d2fe;
+    border-radius: 3px;
+    animation: parpadeo 1s infinite;
+}
+
+@keyframes parpadeo {
+    0%, 100% { border-bottom: 3px solid #4338ca; }
+    50% { border-bottom: 3px solid transparent; }
+}
+
+.entrada-oculta {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* CONTROLES */
+.controles {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.btn-principal, .btn-secundario {
+    border: none;
+    padding: 10px 22px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-principal {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.btn-principal:hover { background-color: #4338ca; }
+.btn-secundario { background-color: #e2e8f0; color: #475569; }
+.btn-secundario:hover { background-color: #cbd5e1; }
+
+/* GUÍA DE DEDOS */
+/* GUÍA VISUAL DE DEDOS */
+.panel-guia-dedos {
+    margin-bottom: 20px;
+}
+
+.indicador-dedo {
+    display: inline-block;
+    background-color: #e0e7ff;
+    color: #3730a3;
+    border: 2px solid #c7d2fe;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 16px;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12);
+}
+
+/* TECLADO VIRTUAL LIMPIDO Y CLARO */
+.contenedor-teclado {
+    background-color: #f8fafc;
+    border: 3px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.fila-teclado {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.tecla {
+    background-color: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    height: 46px;
+    min-width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 3px 0 #cbd5e1;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+/* Anchos especiales */
+.tecla.espacio { width: 280px; }
+.tecla.larga { width: 70px; font-size: 0.8rem; }
+.tecla.mediana { width: 55px; font-size: 0.8rem; }
+
+/* Indicadores de color sutiles por dedo en el borde inferior */
+.dedo-menique-izq { border-bottom: 4px solid #f87171; }
+.dedo-anular-izq  { border-bottom: 4px solid #fb923c; }
+.dedo-medio-izq   { border-bottom: 4px solid #facc15; }
+.dedo-indice-izq  { border-bottom: 4px solid #4ade80; }
+
+.dedo-indice-der  { border-bottom: 4px solid #22d3ee; }
+.dedo-medio-der   { border-bottom: 4px solid #60a5fa; }
+.dedo-anular-der  { border-bottom: 4px solid #a78bfa; }
+.dedo-menique-der { border-bottom: 4px solid #f472b6; }
+.dedo-pulgar      { border-bottom: 4px solid #c084fc; }
+
+/* TECLA ACTIVA RESALTADA Y NÍTIDA */
+.tecla.activa {
+    background-color: #fef08a !important;
+    color: #854d0e !important;
+    border-color: #facc15 !important;
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #eab308, 0 0 12px rgba(250, 204, 21, 0.6) !important;
+    animation: pulsoTeclaClara 0.6s infinite alternate;
+}
+
+@keyframes pulsoTeclaClara {
+    from { transform: scale(1); }
+    to { transform: scale(1.06); }
+}

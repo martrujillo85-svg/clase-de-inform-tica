@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Mecanografía</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor-juego">
+        <header class="cabecera">
+            <span class="badge">Practica tu Teclado con El Principito</span>
+            <h1>Tutor de Mecanografía</h1>
+            <p>Lee con atención y teclea el párrafo respetando mayúsculas, minúsculas, espacios y puntuación.</p>
+        </header>
+
+        <!-- Panel de estadísticas en tiempo real -->
+        <div class="panel-metricas">
+            <div class="chip chip-tiempo">⏱️ Tiempo: <span id="tiempo">0</span>s</div>
+            <div class="chip chip-pdm">⚡ PPM: <span id="wpm">0</span></div>
+            <div class="chip chip-precision">🎯 Precisión: <span id="precision">100</span>%</div>
+            <div class="chip chip-progreso">📊 Progreso: <span id="progreso">0</span>%</div>
+        </div>
+
+        <!-- Visor del texto interactivo -->
+        <div class="caja-texto" id="visor-texto">
+            <!-- Los caracteres se generarán mediante JavaScript -->
+        </div>
+
+        <!-- Campo de entrada oculto para mantener el enfoque -->
+        <input type="text" id="entrada-mecanografia" class="entrada-oculta" autofocus autocomplete="off">
+
+        <!-- Botones de control -->
+        <div class="controles">
+            <button id="btn-siguiente" class="btn-principal">Siguiente Párrafo ➔</button>
+            <button id="btn-reiniciar" class="btn-secundario">Reiniciar Párrafo 🔄</button>
+        </div>
+
+        <!-- Guía visual: Tecla y Dedo a presionar -->
+        <div class="panel-guia-dedos">
+            <div id="indicador-dedo" class="indicador-dedo">Presiona cualquier tecla para comenzar</div>
+        </div>
+
+        <!-- Teclado Virtual Interactivo -->
+        <div class="contenedor-teclado" id="teclado-virtual">
+            <!-- Las teclas se generarán automáticamente desde JS -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

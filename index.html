@@ -32,6 +32,7 @@
                         <a href="#" onclick="showWeek(3)">Semana 3</a>
                         <a href="#" onclick="showWeek(4)">Semana 4</a>
                         <a href="#" onclick="showWeek(5)">Semana 5</a>
+                        <a href="#" onclick="showWeek(6)">Semana 6</a>
                     </div>
                 </li>
 
@@ -122,12 +123,19 @@
         <!-- Cuadrícula de Juegos -->
         <div class="games-grid">
             
-            <!-- TARJETA: Creador Pixel Art (Tu actividad interactiva local) -->
+            <!-- TARJETA: Creador Pixel Art  -->
             <div class="game-card" onclick="loadPixelGame()" style="cursor: pointer;">
                 <div class="game-icon">🎨</div>
                 <h3>Creador Pixel Art</h3>
                 <p>Diseña fantasía píxel a píxel.</p>
             </div>
+
+            <!-- TARJETA: Mecanografía -->
+            <div class="game-card" onclick="loadMecanografia()" style="cursor: pointer;">
+                <div class="game-icon">⌨️</div>
+                <h3>Mecanografía Teclado</h3>
+                <p>Practica el Teclado con El Principito</p>
+                </div>
 
             <!-- Juegos Infantiles PUM -->
             <a href="https://www.juegosinfantilespum.com/" target="_blank" rel="noopener noreferrer" class="game-card">
@@ -161,6 +169,7 @@
         <!-- Contenedor dinámico donde se abrirá el Pixel Art al hacer clic en su tarjeta -->
         <div id="pixel-game-container" style="margin-top: 20px;"></div>
     </div>
+
 </section>
 
 <!-- SECCIÓN INFOGRAFÍAS Y PRESENTACIONES -->
@@ -195,15 +204,18 @@
                 <h3>⌨ Teclado</h3>
                 <p>Partes del teclado</p>
             </div>
-            <div class="feature-card card-blue" onclick="showInfografia('word')" style="cursor: pointer;">
+            <div class="feature-card card-purple" onclick="showInfografia('word')" style="cursor: pointer;">
                 <h3> 📄 Word</h3>
                 <p>Presentación</p>
             </div>
-            <div class="feature-card card-red" onclick="showInfografia('imagen_word')" style="cursor: pointer;">
-    <h3>🖼️ Ventana Word y Atajos</h3>
-    <p>Infografía</p>
-</div>
-            
+            <div class="feature-card card-pink" onclick="showInfografia('imagen_word')" style="cursor: pointer;">
+                 <h3>🖼️ Ventana Word y Atajos</h3>
+                    <p>Infografía</p>
+            </div>
+            <div class="feature-card card-blue" onclick="showInfografia('carta')" style="cursor: pointer;">
+                 <h3>📜La Carta</h3>
+                    <p>Partes de la carta</p>
+            </div>
             
         </div>
         <!-- Botón para regresar al catálogo (oculto por defecto) -->
