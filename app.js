@@ -418,7 +418,7 @@ function showInfografia(tipo) {
     else if (tipo === 'word') {
         pantalla.innerHTML = `
             <div class="info-block">
-                <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">⌨ Partes del Teclado</h3>
+                <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">Word Presentación</h3>
                 <video controls class="hero-img" style="width: 100%; border-radius: 12px;">
                     <source src="infografia/word.mp4" type="video/mp4">
                     Tu navegador no soporta la reproducción de videos.
@@ -436,7 +436,7 @@ function showInfografia(tipo) {
 } else if (tipo === 'carta') {
     pantalla.innerHTML = `
         <div class="info-block">
-            <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🖼️ Infografía: Ventana de Word</h3>
+            <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🖼️ Infografía: La Carta</h3>
             <img src="infografia/carta.jpg" alt="Infografía Ventana de Word" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             </div>
     `;
