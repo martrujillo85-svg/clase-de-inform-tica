@@ -46,7 +46,7 @@ const contenidoSemanas = {
         titulo: "Semana 6: Formato Word",
         descripcion: "Herramientas de Formato",
         actividades: [
-           { id: 1, nombre: " 📄 Deafío de Word" },
+           { id: 1, nombre: " 📄 Desafío de Word" },
          ]
     }
 };
@@ -260,14 +260,14 @@ function loadActivity(weekNumber, activityId) {
         // Semana 4 - Actividad 1: Teclado
         screen.innerHTML = `
             <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
-                <iframe src="semana 4/teclado/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+                <iframe src="semana 4/teclado/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Teclado"></iframe>
             </div>
         `;
     }else if (weekNumber === 4 && activityId === 2) {
         // Semana 4 - Actividad 2: Teclado
         screen.innerHTML = `
             <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
-                <iframe src="semana 4/especiales/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+                <iframe src="semana 4/especiales/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Teclado"></iframe>
             </div>
         `;
     }
@@ -275,7 +275,7 @@ function loadActivity(weekNumber, activityId) {
         // Semana 5 - Actividad 1: Ventana de Word
         screen.innerHTML = `
             <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
-                <iframe src="semana 5/word/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+                <iframe src="semana 5/word/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Ventana Word"></iframe>
             </div>
         `;
     }
@@ -283,7 +283,7 @@ function loadActivity(weekNumber, activityId) {
         // Semana 5 - Actividad 2: Herramientas
         screen.innerHTML = `
             <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
-                <iframe src="semana 5/formato/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+                <iframe src="semana 5/formato/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Word"></iframe>
             </div>
         `;
     }
@@ -291,7 +291,7 @@ function loadActivity(weekNumber, activityId) {
         // Semana 6 - Actividad 1: Formato en Word
         screen.innerHTML = `
             <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
-                <iframe src="semana 6/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Escritorio"></iframe>
+                <iframe src="semana 6/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Word Formato"></iframe>
             </div>
         `;
     }
@@ -433,7 +433,15 @@ function showInfografia(tipo) {
             <img src="infografia/atajos.jpg" alt="Infografía Ventana de Word" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             </div>
     `;
-} else if (tipo === 'carta') {
+    } 
+    else if (tipo === 'formato_word') {
+    pantalla.innerHTML = `
+        <div class="info-block">
+            <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🖼️ Infografía: Formato de Word</h3>
+            <img src="infografia/formato.jpg" alt="Infografía Formato en Word" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            </div>
+    `;
+    }else if (tipo === 'carta') {
     pantalla.innerHTML = `
         <div class="info-block">
             <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🖼️ Infografía: La Carta</h3>

@@ -1,12 +1,35 @@
-// Párrafos extensos de El Principito (Diseñados para sesiones de 6 a 8 minutos)
+// Párrafos extensos de El Principito 
 const parrafosPrincipito = [
-    "Cuando yo tenía seis años vi en un libro sobre la selva virgen que se titulaba Historias vividas, una magnífica lámina. Representaba una serpiente boa que se tragaba a una fiera. En el libro se afirmaba: La serpiente boa se traga su presa entera, sin masticarla. Luego ya no puede moverse y duerme durante los seis meses que dura su digestión Reflexioné mucho en ese momento sobre las aventuras de la jungla y a mi vez logré trazar con un lápiz de colores mi primer dibujo.",
-
-    "Enseñé mi obra de arte a las personas mayores y les pregunté si mi dibujo les daba miedo. ¿Por qué habría de asustar un sombrero? me respondieron. Mi dibujo no representaba un sombrero. Representaba una serpiente boa que digiere un elefante. Dibujé entonces el interior de la serpiente boa a fin de que las personas mayores pudieran comprender. Siempre estas personas tienen necesidad de explicaciones. ",
-
-    "Las personas mayores me aconsejaron abandonar el dibujo de serpientes boas, ya fueran abiertas o cerradas, y poner más interés en la geografía, la historia, el cálculo y la gramática. De esta manera a la edad de seis años abandoné una magnífica carrera de pintor. Había quedado desilusionado por el fracaso de mis dibujos número 1 y número 2. Las personas mayores nunca pueden comprender algo por sí solas y es muy aburrido para los niños tener que darles una y otra vez explicaciones."
+    // Parte 1
+    "Cuando yo tenía seis años vi en un libro sobre la selva virgen que se titulaba Historias vividas, una magnífica lámina.Representaba una serpiente boa que se tragaba a una fiera. En el libro se afirmaba: La serpiente boa se traga su presa entera, sin masticarla. Luego ya no puede moverse y duerme durante los seis meses que dura su digestión. Reflexioné mucho en ese momento sobre las aventuras de la jungla y a mi vez logré trazar con un lápiz de colores mi primer dibujo. Mi dibujo número 1 era de esta manera. Enseñé mi obra de arte a las personas mayores y les pregunté si mi dibujo les daba miedo.",
+       
+    // Parte 2
+    "—¿Por qué habría de asustar un sombrero? — me respondieron. Mi dibujo no representaba un sombrero. Representaba una serpiente boa que digiere un elefante. Dibujé entonces el interior de la serpiente boa a fin de que las personas mayores pudieran comprender. Siempre estas personas tienen necesidad de explicaciones. Mi dibujo número 2 era así. Las personas mayores me aconsejaron abandonar el dibujo de serpientes boas, ya fueran abiertas o cerradas, y poner más interés en la geografía, la historia, el cálculo y la gramática. De esta manera a la edad de seis años abandoné una magnífica carrera de pintor. Había quedado desilusionado por el fracaso de mis dibujos número 1 y número 2. Las personas mayores nunca pueden comprender algo por sí solas y es muy aburrido para los niños tener que darles una y otra vez explicaciones.",
+    
+    // Parte 3
+    "Esto no podía asombrarme mucho. Sabía muy bien que aparte de los grandes planetas como la Tierra, Júpiter, Marte, Venus, a los cuales se les ha dado nombre, existen otros centenares de ellos tan pequeños a veces, que es difícil distinguirlos aun con la ayuda del telescopio. Cuando un astrónomo descubre uno de estos planetas, le da por nombre un número. Le llama, por ejemplo, el asteroide 3251. Tengo poderosas razones para creer que el planeta del cual venía el principito era el asteroide B612. Este asteroide ha sido visto sólo una vez con el telescopio en 1909, por un astrónomo turco.",
+    
+    // Parte 4
+    "Aprendí bien pronto a conocer mejor esta flor. Siempre había habido en el planeta del principito flores muy simples adornadas con una sola fila de pétalos que apenas ocupaban sitio y a nadie molestaban. Aparecían entre la hierba una mañana y por la tarde se extinguían. Pero aquella había germinado un día de una semilla llegada de quién sabe dónde, y el principito había vigilado cuidadosamente desde el primer día aquella ramita tan diferente de las que él conocía. Podía ser una nueva especie de Baobab. Pero el arbusto cesó pronto de crecer y comenzó a echar su flor. El principito observó el crecimiento de un enorme capullo y tenía le convencimiento de que habría de salir de allí una aparición milagrosa; pero la flor no acababa de preparar su belleza al abrigo de su envoltura verde."
 ];
 
+// Variable global del índice del párrafo actual (asegúrate de que tenga este mismo nombre)
+let parrafoActual = 0;
+
+function cambiarParrafo(indice) {
+    // 1. Actualizar el índice global del párrafo
+    indiceParrafo = indice;
+
+    // 2. Volver a cargar el párrafo con formato interactivo (crea los span de cada letra)
+    cargarParrafo();
+
+    // 3. Devolver el foco al input invisible para que el teclado funcione al instante
+    const entrada = document.getElementById('entrada-mecanografia');
+    if (entrada) {
+        entrada.focus();
+    }
+}
+    
 // Mapa de teclado QWERTY español con indicación del dedo correspondiente
 const mapaTeclado = [
     [

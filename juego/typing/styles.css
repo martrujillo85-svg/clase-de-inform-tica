@@ -16,7 +16,54 @@ body {
     padding: 20px;
     color: #333;
 }
+.selector-parrafo-container {
+    background-color: #f0fdf4;
+    border: 2px solid #bbf7d0;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin: 15px auto;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
+.selector-parrafo-container select {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 2px solid #22c55e;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #15803d;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Estilos si prefieres botones de semanas */
+.semanas-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-semana {
+    background-color: #e0e7ff;
+    color: #4338ca;
+    border: 2px solid #c7d2fe;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-semana.active, .btn-semana:hover {
+    background-color: #4338ca;
+    color: white;
+}
 .contenedor-juego {
     max-width: 950px;
     width: 100%;
