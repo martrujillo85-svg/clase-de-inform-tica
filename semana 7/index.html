@@ -3,87 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Práctica en Word: La Carta</title>
+    <title>Práctica de Word: Calaverita Literaria 💀🌼</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="contenedor-practica">
+    <div class="contenedor-actividad">
         <header class="cabecera">
-            <span class="badge">✉️ Desafío de Procesador de Textos</span>
-            <h1>Conoce y Escribe una Carta en Word</h1>
-            <p>Copia el siguiente texto en Word y aplica el formato indicado para identificar cada parte de la carta.</p>
+            <span class="badge">📝 Práctica de Formato en Word</span>
+            <h1>Calaverita Literaria Digital 💀✨</h1>
         </header>
 
-        <div class="panel-practica">
-            <!-- Columna 1: Texto a Copiar -->
-            <div class="caja-panel">
-                <h3>📄 Texto Base (Borrador)</h3>
-                <div class="texto-copiar" id="texto-base">
-Ciudad de México, 12 de noviembre de 2026
-
-Querido amigo Zorro:
-
-Te escribo esta carta desde mi pequeño planeta para contarte que he cuidado mucho a mi rosa todos los días. He limpiado los volcanes y me acordé mucho de las enseñanzas que me diste sobre la amistad. Espero que te encuentres muy bien y que pronto podamos volver a platicar bajo el manzano.
-
-Con mucho cariño y un fuerte abrazo,
-
-El Principito
-                </div>
-                <button class="btn-copiar" onclick="copiarTexto()">📋 Copiar Carta al Portapapeles</button>
-            </div>
-
-            <!-- Columna 2: Lista de Instrucciones por Parte de la Carta -->
-            <div class="caja-panel">
-                <h3>🎨 Instrucciones de Formato</h3>
-                <ul class="lista-instrucciones">
+        <div class="grid-contenido">
+            <!-- Columna de Instrucciones -->
+            <div class="tarjeta instrucciones">
+                <h2>📋 Lista de Instrucciones</h2>
+                <ul class="lista-pasos">
                     <li>
-                        <span class="paso">1</span> 
-                        <strong>Lugar y Fecha:</strong> Alineación a la <em>Derecha</em>, fuente Arial, tamaño 11, color Gris oscuro.
+                        <span class="paso-num">1</span>
+                        <div><strong>Abre Word</strong> Nuevo documento.</div>
                     </li>
                     <li>
-                        <span class="paso">2</span> 
-                        <strong>Saludo ("Querido amigo Zorro:"):</strong> Alineación a la <em>Izquierda</em>, fuente Calibri o Comic Sans, tamaño 12, <strong>Negrita</strong>, color Azul (#1d4ed8).
+                        <span class="paso-num">2</span>
+                        <div><strong>Diseño</strong> Cambia el color de la hoja y elige un borde de página.</div>
                     </li>
                     <li>
-                        <span class="paso">3</span> 
-                        <strong>Cuerpo de la Carta:</strong> Alineación <em>Justificado</em>, fuente Calibri, tamaño 12, interlineado 1.5.
+                        <span class="paso-num">3</span>
+                        <div><strong>Texto y Rimas:</strong> Busca las palabras que riman al final de los versos, ponlas en <strong>Negrita</strong> y cambia su color a <span>Morado</span> o <span>Verde</span>.</div>
                     </li>
                     <li>
-                        <span class="paso">4</span> 
-                        <strong>Despedida ("Con mucho cariño..."):</strong> Alineación a la <em>Derecha</em>, <em>Cursiva</em>, color Naranja (#d97706).
-                    </li>
-                    <li>
-                        <span class="paso">5</span> 
-                        <strong>Firma ("El Principito"):</strong> Alineación a la <em>Derecha</em>, fuente Arial Black, tamaño 12, <strong>Negrita</strong>, color Verde (#059669).
-                    </li>
-                    <li>
-                        <span class="paso">6</span> 
-                        <strong>Guardar:</strong> Guarda el archivo con el nombre <code>Carta_TuNombre.docx</code>.
+                        <span class="paso-num">4</span>
+                        <div><strong>Decoración:</strong> Agrega formas y crea una calaverita y decórala</div>
                     </li>
                 </ul>
             </div>
-        </div>
 
-        <!-- Ejemplo final esperado -->
-        <div class="caja-ejemplo">
-            <h3>👁️ Ejemplo de cómo debe quedar tu carta en Word:</h3>
-            <div class="resultado-ejemplo">
-                <p style="text-align: right; color: #475569; font-family: Arial, sans-serif; font-size: 11px; margin-bottom: 15px;">
-                    Ciudad de México, 12 de noviembre de 2026
-                </p>
-                <p style="text-align: left; color: #1d4ed8; font-family: 'Comic Sans MS', Calibri, sans-serif; font-size: 12px; font-weight: bold; margin-bottom: 12px;">
-                    Querido amigo Zorro:
-                </p>
-                <p style="text-align: justify; color: #334155; font-family: Calibri, sans-serif; font-size: 12px; line-height: 1.6; margin-bottom: 15px;">
-                    Te escribo esta carta desde mi pequeño planeta para contarte que he cuidado mucho a mi rosa todos los días. He limpiado los volcanes y me acordé mucho de las enseñanzas que me diste sobre la amistad. Espero que te encuentres muy bien y que pronto podamos volver a platicar bajo el manzano.
-                </p>
-                <p style="text-align: right; color: #d97706; font-family: Calibri, sans-serif; font-size: 12px; font-style: italic; margin-bottom: 8px;">
-                    Con mucho cariño y un fuerte abrazo,
-                </p>
-                <p style="text-align: right; color: #059669; font-family: 'Arial Black', sans-serif; font-size: 12px; font-weight: bold;">
-                    El Principito
-                </p>
+        <!-- Muestra/Previsualización del Resultado Esperado -->
+        <div class="tarjeta vista-previa">
+            <h2>🎯 Ejemplo de cómo debe quedar tu hoja en Word</h2>
+            <div class="hoja-word-simulada">
+                <img src="/semana 7/calaverita.png" alt="">
+                <div class="icono-decorativo">💀🌼🎃</div>
             </div>
         </div>
     </div>

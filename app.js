@@ -48,6 +48,20 @@ const contenidoSemanas = {
         actividades: [
            { id: 1, nombre: " 📄 Desafío de Word" },
          ]
+    },
+    7: {
+        titulo: "Semana 7: Calaverita Literaria",
+        descripcion: "Día de Muertos",
+        actividades: [
+           { id: 1, nombre: " 💀 Calaverita Literaria" },
+         ]
+    },
+    8: {
+        titulo: "Semana 8: La Carta",
+        descripcion: "Conoce los elementos de la carta",
+        actividades: [
+           { id: 1, nombre: " 📄 La carta" },
+         ]
     }
 };
 
@@ -292,6 +306,22 @@ function loadActivity(weekNumber, activityId) {
         screen.innerHTML = `
             <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
                 <iframe src="semana 6/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Word Formato"></iframe>
+            </div>
+        `;
+    }
+     else if (weekNumber === 7 && activityId === 1) {
+        // Semana 7 - Actividad 1: Calaverita Literaria
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 7/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Calaverita Literaria"></iframe>
+            </div>
+        `;
+    }
+    else if (weekNumber === 8 && activityId === 1) {
+        // Semana 8 - Actividad 1: La carta
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 8/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="La Carta"></iframe>
             </div>
         `;
     }
