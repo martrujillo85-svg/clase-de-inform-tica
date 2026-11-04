@@ -62,7 +62,15 @@ const contenidoSemanas = {
         actividades: [
            { id: 1, nombre: " 📄 La carta" },
          ]
+    },
+     9: {
+        titulo: "Semana 9: Tríptico",
+        descripcion: "Crea un tríptico de tu animal favorito",
+        actividades: [
+           { id: 1, nombre: " 📰 Tríptico" },
+         ]
     }
+
 };
 
 // 2. Navegación entre Secciones Principales (Inicio, Juegos, Infografías, Enlaces)
@@ -325,6 +333,14 @@ function loadActivity(weekNumber, activityId) {
             </div>
         `;
     }
+    else if (weekNumber === 9 && activityId === 1) {
+        // Semana 9 - Actividad: Tríptico
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 9/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Tríptico"></iframe>
+            </div>
+        `;
+    }
 }
 
 // Función para cargar el Creador Pixel Art
@@ -471,11 +487,20 @@ function showInfografia(tipo) {
             <img src="infografia/formato.jpg" alt="Infografía Formato en Word" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             </div>
     `;
-    }else if (tipo === 'carta') {
+    }
+    else if (tipo === 'carta') {
     pantalla.innerHTML = `
         <div class="info-block">
             <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🖼️ Infografía: La Carta</h3>
             <img src="infografia/carta.jpg" alt="Infografía Ventana de Word" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            </div>
+    `;
+}
+else if (tipo === 'triptico') {
+    pantalla.innerHTML = `
+        <div class="info-block">
+            <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🖼️ Infografía: Tríptico</h3>
+            <img src="infografia/triptico.jpg" alt="Infografía Tríptico" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             </div>
     `;
 }
