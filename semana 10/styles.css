@@ -1,0 +1,235 @@
+:root {
+    --naranja-pp: #d24726;
+    --naranja-claro: #ffedd5;
+    --fondo: #f8fafc;
+    --texto: #1e293b;
+    --verde-ok: #10b981;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    margin: 0;
+    padding: 20px;
+}
+
+.contenedor-mision {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Header y Progreso */
+.header-mision {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border-top: 6px solid var(--naranja-pp);
+    margin-bottom: 25px;
+}
+
+.etiqueta-curso {
+    background-color: var(--naranja-claro);
+    color: var(--naranja-pp);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+h1 {
+    margin: 10px 0 8px 0;
+    color: var(--naranja-pp);
+    font-size: 1.9rem;
+}
+
+.panel-progreso {
+    background-color: #f1f5f9;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-top: 18px;
+}
+
+.info-progreso {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.barra-fondo {
+    background-color: #cbd5e1;
+    height: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.barra-relleno {
+    background: linear-gradient(90deg, #f97316, #10b981);
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+.medallas-fila {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.medalla {
+    background-color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 2px solid #cbd5e1;
+    transition: all 0.3s ease;
+}
+
+.medalla.bloqueada {
+    opacity: 0.45;
+    filter: grayscale(100%);
+}
+
+.medalla.desbloqueada {
+    border-color: #f59e0b;
+    background-color: #fef3c7;
+    color: #92400e;
+    transform: scale(1.05);
+}
+
+/* Tarjetas de Fase */
+.tarjeta-fase {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border-left: 5px solid #94a3b8;
+}
+
+.tarjeta-fase.fase-completa {
+    border-left-color: var(--verde-ok);
+}
+
+.fase-titulo {
+    margin: 0 0 6px 0;
+    font-size: 1.25rem;
+    color: #0f172a;
+}
+
+.fase-desc {
+    margin: 0 0 16px 0;
+    font-size: 0.92rem;
+    color: #64748b;
+}
+
+/* Items de Retos */
+.reto-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reto-item:hover {
+    border-color: #fdba74;
+    background-color: #fffaf5;
+}
+
+.reto-item.completado {
+    background-color: #ecfdf5;
+    border-color: #6ee7b7;
+}
+
+.reto-item.completado .reto-texto {
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+.reto-checkbox {
+    width: 22px;
+    height: 22px;
+    accent-color: var(--verde-ok);
+    margin-top: 3px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.reto-contenido {
+    flex: 1;
+}
+
+.reto-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.reto-nombre {
+    font-weight: bold;
+    font-size: 1.02rem;
+    color: var(--naranja-pp);
+}
+
+.reto-item.completado .reto-nombre {
+    color: #059669;
+}
+
+.pista-ubicacion {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.78rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+.reto-texto {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+/* Banner Victoria */
+.banner-victoria {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    text-align: center;
+    padding: 28px;
+    border-radius: 18px;
+    margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25);
+}
+
+.oculto {
+    display: none;
+}
+
+.btn-reiniciar {
+    background-color: #ffffff;
+    color: #059669;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-reiniciar:hover {
+    background-color: #f0fdf4;
+}

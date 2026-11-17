@@ -69,6 +69,13 @@ const contenidoSemanas = {
         actividades: [
            { id: 1, nombre: " 📰 Tríptico" },
          ]
+    },
+    10: {
+        titulo: "Semana 10: Power Point",
+        descripcion: "Conoce la ventana de Power Point y cumple los retos",
+        actividades: [
+           { id: 1, nombre: " 🏆 Retos" },
+         ]
     }
 
 };
@@ -341,6 +348,14 @@ function loadActivity(weekNumber, activityId) {
             </div>
         `;
     }
+     else if (weekNumber === 10 && activityId === 1) {
+        // Semana 10 - Actividad: Retos para conocer Powerpoint
+        screen.innerHTML = `
+            <div style="width: 100%; max-width: 900px; height: 620px; margin: 10px auto;">
+                <iframe src="semana 10/index.html" style="width: 100%; height: 100%; border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);" title="Retos"></iframe>
+            </div>
+        `;
+    }
 }
 
 // Función para cargar el Creador Pixel Art
@@ -501,6 +516,16 @@ else if (tipo === 'triptico') {
         <div class="info-block">
             <h3 style="color: #46178f; margin-bottom: 12px; font-size: 1.3rem;">🖼️ Infografía: Tríptico</h3>
             <img src="infografia/triptico.jpg" alt="Infografía Tríptico" style="width: 100%; max-height: 520px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            </div>
+    `;
+}
+else if (tipo === 'powerpoint') {
+    pantalla.innerHTML = `
+        <div class="info-block">
+            <video controls class="hero-img" style="width: 100%; border-radius: 12px;">
+                    <source src="infografia/power.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
             </div>
     `;
 }

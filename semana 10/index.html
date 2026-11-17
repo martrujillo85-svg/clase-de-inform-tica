@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión PowerPoint: 10 Retos de Exploración</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor-mision">
+        <!-- Encabezado y Barra de Progreso -->
+        <header class="header-mision">
+            <div class="titulo-grupo">
+                <h1>🚀 Exploradores de PowerPoint</h1>
+                <p>Abre PowerPoint en tu computadora y cumple los 10 retos en orden. ¡Marca cada casilla cuando lo logres!</p>
+            </div>
+
+            <div class="panel-progreso">
+                <div class="info-progreso">
+                    <span id="texto-completados">0 de 10 retos completados</span>
+                    <span id="porcentaje-texto">0%</span>
+                </div>
+                <div class="barra-fondo">
+                    <div id="barra-progreso" class="barra-relleno"></div>
+                </div>
+                <div class="medallas-fila">
+                    <span id="medalla-1" class="medalla bloqueada">🥉 Explorador</span>
+                    <span id="medalla-2" class="medalla bloqueada">🥈 Diseñador</span>
+                    <span id="medalla-3" class="medalla bloqueada">🥇 Maestro PP</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contenedor de Fases -->
+        <main id="lista-fases">
+            <!-- Se genera dinámicamente con JavaScript -->
+        </main>
+
+        <!-- Mensaje Final de Victoria -->
+        <div id="banner-victoria" class="banner-victoria oculto">
+            <h2>🎉 ¡Misión Completada al 100%!</h2>
+            <p>Ya dominas toda la pantalla de PowerPoint. Muéstrale tu presentación al profesor para revisar tus 4 diapositivas.</p>
+            <button id="btn-reiniciar" class="btn-reiniciar">Reiniciar Misión 🔄</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
